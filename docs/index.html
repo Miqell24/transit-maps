@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Public Transport Network Maps — Kraków · Poznań · Katowice · Tricity · Athens · Thessaloniki</title>
+<meta name="description" content="Interactive, poster-grade public transport maps of six cities, built from official GTFS feeds and OpenStreetMap street geometry.">
+<style>
+:root {
+  --kmk: #0059a9;
+  --kmk-dark: #00294f;
+  --tram: #d6212b;
+  --trolley: #149a3f;
+  --mline: #e8a000;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: #eef2f7;
+  color: #16202c;
+}
+.wrap { max-width: 1160px; margin: 0 auto; padding: 34px 20px 20px; }
+header h1 {
+  margin: 0;
+  font-size: clamp(24px, 4vw, 34px);
+  line-height: 1.15;
+  color: var(--kmk-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+header p.sub {
+  margin: 10px 0 0;
+  max-width: 760px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #445;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 18px;
+  margin-top: 26px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0, 30, 70, 0.14);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 30, 70, 0.24);
+}
+.thumb {
+  height: 235px;
+  background: #f7f9fc;
+  border-bottom: 1px solid #e6ecf4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+.thumb img { max-width: 100%; max-height: 100%; }
+.body { padding: 14px 18px 16px; display: flex; flex-direction: column; gap: 7px; flex: 1; }
+.body h2 { margin: 0; font-size: 19px; color: var(--kmk-dark); }
+.op { font-size: 12.5px; font-weight: 600; color: #556; }
+.stats { font-size: 13px; color: #223; }
+.chips { display: flex; flex-wrap: wrap; gap: 5px 10px; margin-top: auto; padding-top: 4px; }
+.chip { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; color: #334; }
+.chip .sw { width: 18px; height: 4px; border-radius: 2px; background: var(--kmk); }
+.chip .sw.tram { background: var(--tram); }
+.chip .sw.trolley { background: var(--trolley); }
+.chip .sw.mline { background: var(--mline); }
+.chip .sw.tram-gr { background: #7d2b8b; }
+.chip .sw.metro-ath { background: linear-gradient(90deg, #009550 33%, #e30613 33% 66%, #1e9cd7 66%); }
+.chip .sw.metro-th { background: #e30613; }
+.open {
+  margin-top: 8px;
+  align-self: flex-start;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--kmk);
+  border-radius: 7px;
+  padding: 5px 12px;
+}
+.card:hover .open { background: var(--kmk-dark); }
+footer {
+  margin-top: 30px;
+  padding: 16px 0 6px;
+  border-top: 1px solid #dbe3ef;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #667;
+}
+footer a { color: var(--kmk); font-weight: 600; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Public Transport Network Maps</h1>
+  <p class="sub">Six transit networks drawn along the real street geometry — every bus, tram, trolleybus and metro
+  route map-matched from official GTFS feeds onto OpenStreetMap roads. Each map is interactive and exports
+  print-quality PNG posters. Pick a city:</p>
+</header>
+
+<main class="grid">
+  <a class="card" href="https://miqell24.github.io/krakow-bus-map/">
+    <div class="thumb"><img src="thumbs/krakow.svg" alt="Kraków network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Kraków</h2>
+      <div class="op">KMK — Kraków Public Transport</div>
+      <div class="stats">187 lines · 3,262 stops</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>164 bus</span>
+        <span class="chip"><span class="sw tram"></span>23 tram</span>
+      </div>
+      <span class="open">Open the map →</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/poznan-bus-map/">
+    <div class="thumb"><img src="thumbs/poznan.svg" alt="Poznań network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Poznań</h2>
+      <div class="op">ZTM Poznań</div>
+      <div class="stats">192 lines · 3,060 stops</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>173 bus</span>
+        <span class="chip"><span class="sw tram"></span>19 tram</span>
+      </div>
+      <span class="open">Open the map →</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/gzm-bus-map/">
+    <div class="thumb"><img src="thumbs/gzm.svg" alt="GZM Metropolis network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Katowice · GZM Metropolis</h2>
+      <div class="op">ZTM — Metropolia GZM</div>
+      <div class="stats">467 lines · 7,346 stops · the largest network of the family</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>401 bus</span>
+        <span class="chip"><span class="sw trolley"></span>8 trolleybus</span>
+        <span class="chip"><span class="sw mline"></span>31 metroline</span>
+        <span class="chip"><span class="sw tram"></span>27 tram</span>
+      </div>
+      <span class="open">Open the map →</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/trojmiasto-bus-map/">
+    <div class="thumb"><img src="thumbs/tricity.svg" alt="Tricity network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Tricity — Gdańsk · Gdynia · Sopot</h2>
+      <div class="op">ZTM Gdańsk + ZKM Gdynia</div>
+      <div class="stats">191 lines · 2,655 stops · two GTFS feeds merged</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>164 bus</span>
+        <span class="chip"><span class="sw trolley"></span>16 trolleybus</span>
+        <span class="chip"><span class="sw tram"></span>11 tram</span>
+      </div>
+      <span class="open">Open the map →</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/athens-bus-map/">
+    <div class="thumb"><img src="thumbs/athens.svg" alt="Athens network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Athens</h2>
+      <div class="op">OASA — OSY buses + STASY metro &amp; tram</div>
+      <div class="stats">288 lines · 7,159 stops</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>263 bus</span>
+        <span class="chip"><span class="sw trolley"></span>20 trolleybus</span>
+        <span class="chip"><span class="sw metro-ath"></span>3 metro</span>
+        <span class="chip"><span class="sw tram-gr"></span>2 tram</span>
+      </div>
+      <span class="open">Open the map →</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/thessaloniki-bus-map/">
+    <div class="thumb"><img src="thumbs/thessaloniki.svg" alt="Thessaloniki network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Thessaloniki</h2>
+      <div class="op">OASTH + Thessaloniki Metro</div>
+      <div class="stats">228 lines · 3,666 stops</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>227 bus</span>
+        <span class="chip"><span class="sw metro-th"></span>1 metro</span>
+      </div>
+      <span class="open">Open the map →</span>
+    </div>
+  </a>
+</main>
+
+<footer>
+  Card miniatures are the actual route networks, rendered from each map's published data.
+  Route geometry: official GTFS feeds map-matched onto OpenStreetMap · base map tiles on the interactive maps:
+  © OpenFreeMap, OpenMapTiles, OpenStreetMap contributors ·
+  <a href="https://github.com/Miqell24">github.com/Miqell24</a>
+</footer>
+</div>
+</body>
+</html>
