@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BUSMAN 4o 2026 — Public Transport Network Maps</title>
-<meta name="description" content="Interactive, poster-grade public transport maps of six cities, built from official GTFS feeds and OpenStreetMap street geometry.">
+<meta name="description" content="Interactive, poster-grade public transport maps of nine cities, built from official GTFS feeds and OpenStreetMap street geometry.">
 <style>
 :root {
   --kmk: #0059a9;
@@ -80,6 +80,8 @@ header p.sub {
 .chip .sw.tram-gr { background: #7d2b8b; }
 .chip .sw.metro-ath { background: linear-gradient(90deg, #009550 33%, #e30613 33% 66%, #1e9cd7 66%); }
 .chip .sw.metro-th { background: #e30613; }
+.chip .sw.metro-buc { background: linear-gradient(90deg, #f8c301 0 20%, #495676 20% 40%, #da251c 40% 60%, #3c746b 60% 80%, #f7951e 80%); }
+.chip .sw.metro-cai { background: linear-gradient(90deg, #0088ce 50%, #e30613 50%); }
 .open {
   margin-top: 8px;
   align-self: flex-start;
@@ -154,6 +156,19 @@ footer a:hover { text-decoration: underline; }
     </div>
   </a>
 
+  <a class="card" href="https://miqell24.github.io/rybnik-bus-map/">
+    <div class="thumb"><img src="thumbs/rybnik.svg" alt="Rybnik region network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Rybnik Region</h2>
+      <div class="op">KM Rybnik · BKM Żory · MZK Jastrzębie-Zdrój · Wodzisław county</div>
+      <div class="stats">123 lines · 1,650 stops · four GTFS feeds, none with shapes</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>123 bus</span>
+      </div>
+      <span class="open">Open the map →</span>
+    </div>
+  </a>
+
   <a class="card" href="https://miqell24.github.io/trojmiasto-bus-map/">
     <div class="thumb"><img src="thumbs/tricity.svg" alt="Tricity network miniature" loading="lazy"></div>
     <div class="body">
@@ -164,6 +179,22 @@ footer a:hover { text-decoration: underline; }
         <span class="chip"><span class="sw"></span>164 bus</span>
         <span class="chip"><span class="sw trolley"></span>16 trolleybus</span>
         <span class="chip"><span class="sw tram"></span>11 tram</span>
+      </div>
+      <span class="open">Open the map →</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/bucharest-bus-map/">
+    <div class="thumb"><img src="thumbs/bucharest.svg" alt="Bucharest network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Bucharest &amp; Ilfov</h2>
+      <div class="op">TPBI — STB · Metrorex · Ilfov operators</div>
+      <div class="stats">201 lines · 4,264 stops</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>166 bus</span>
+        <span class="chip"><span class="sw trolley"></span>17 trolleybus</span>
+        <span class="chip"><span class="sw tram"></span>13 tram</span>
+        <span class="chip"><span class="sw metro-buc"></span>5 metro</span>
       </div>
       <span class="open">Open the map →</span>
     </div>
@@ -194,6 +225,20 @@ footer a:hover { text-decoration: underline; }
       <div class="chips">
         <span class="chip"><span class="sw"></span>227 bus</span>
         <span class="chip"><span class="sw metro-th"></span>1 metro</span>
+      </div>
+      <span class="open">Open the map →</span>
+    </div>
+  </a>
+  <a class="card" href="https://miqell24.github.io/cairo-bus-map/">
+    <div class="thumb"><img src="thumbs/cairo.svg" alt="Cairo network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Cairo</h2>
+      <div class="op">Transport for Cairo — CTA · Mwasalat Misr · paratransit · Metro</div>
+      <div class="stats">995 lines · 2,983 stops · the densest network of the family</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>354 bus</span>
+        <span class="chip"><span class="sw mline"></span>639 paratransit</span>
+        <span class="chip"><span class="sw metro-cai"></span>2 metro</span>
       </div>
       <span class="open">Open the map →</span>
     </div>

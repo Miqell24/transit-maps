@@ -13,9 +13,12 @@ const CITIES = [
   { repo: 'krakow-bus-map', slug: 'krakow' },
   { repo: 'poznan-bus-map', slug: 'poznan' },
   { repo: 'gzm-bus-map', slug: 'gzm' },
+  { repo: 'rybnik-bus-map', slug: 'rybnik' },
   { repo: 'trojmiasto-bus-map', slug: 'tricity' },
+  { repo: 'bucharest-bus-map', slug: 'bucharest' },
   { repo: 'athens-bus-map', slug: 'athens' },
   { repo: 'thessaloniki-bus-map', slug: 'thessaloniki' },
+  { repo: 'cairo-bus-map', slug: 'cairo' },
 ];
 
 const W = 700; // viewBox width; height follows the network's aspect ratio
