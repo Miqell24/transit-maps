@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BUSMAN 4o 2026 — Public Transport Network Maps</title>
-<meta name="description" content="Interactive, poster-grade public transport maps of ten cities, built from official GTFS feeds and OpenStreetMap street geometry.">
+<meta name="description" content="Interactive, poster-grade public transport maps of eleven cities, built from official GTFS feeds and OpenStreetMap street geometry.">
 <style>
 :root {
   --kmk: #0059a9;
@@ -82,6 +82,7 @@ header p.sub {
 .chip .sw.metro-th { background: #e30613; }
 .chip .sw.metro-vie { background: linear-gradient(90deg, #e3000f 0 20%, #a862a4 20% 40%, #ef7c00 40% 60%, #319f49 60% 80%, #9d6830 80%); }
 .chip .sw.metro-buc { background: linear-gradient(90deg, #f8c301 0 20%, #495676 20% 40%, #da251c 40% 60%, #3c746b 60% 80%, #f7951e 80%); }
+.chip .sw.metro-sof { background: linear-gradient(90deg, #eb2227 0 25%, #1c75bc 25% 50%, #39b54a 50% 75%, #ffde17 75%); }
 .chip .sw.metro-cai { background: linear-gradient(90deg, #0088ce 50%, #e30613 50%); }
 .open {
   margin-top: 8px;
@@ -211,6 +212,22 @@ footer a:hover { text-decoration: underline; }
         <span class="chip"><span class="sw trolley"></span>17 trolleybus</span>
         <span class="chip"><span class="sw tram"></span>13 tram</span>
         <span class="chip"><span class="sw metro-buc"></span>5 metro</span>
+      </div>
+      <span class="open">Open the map →</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/sofia-bus-map/">
+    <div class="thumb"><img src="thumbs/sofia.svg" alt="Sofia network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Sofia</h2>
+      <div class="op">&#1062;&#1077;&#1085;&#1090;&#1098;&#1088; &#1079;&#1072; &#1075;&#1088;&#1072;&#1076;&#1089;&#1082;&#1072; &#1084;&#1086;&#1073;&#1080;&#1083;&#1085;&#1086;&#1089;&#1090; (CGM)</div>
+      <div class="stats">140 lines · 2,211 stops · every mode numbered from 1</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>100 bus</span>
+        <span class="chip"><span class="sw trolley"></span>17 trolleybus</span>
+        <span class="chip"><span class="sw tram"></span>19 tram</span>
+        <span class="chip"><span class="sw metro-sof"></span>4 metro</span>
       </div>
       <span class="open">Open the map →</span>
     </div>
