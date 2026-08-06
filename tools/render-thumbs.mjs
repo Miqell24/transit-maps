@@ -15,6 +15,7 @@ const CITIES = [
   { repo: 'gzm-bus-map', slug: 'gzm' },
   { repo: 'rybnik-bus-map', slug: 'rybnik' },
   { repo: 'trojmiasto-bus-map', slug: 'tricity' },
+  { repo: 'vienna-bus-map', slug: 'vienna' },
   { repo: 'bucharest-bus-map', slug: 'bucharest' },
   { repo: 'athens-bus-map', slug: 'athens' },
   { repo: 'thessaloniki-bus-map', slug: 'thessaloniki' },

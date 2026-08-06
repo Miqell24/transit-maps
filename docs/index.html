@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BUSMAN 4o 2026 — Public Transport Network Maps</title>
-<meta name="description" content="Interactive, poster-grade public transport maps of nine cities, built from official GTFS feeds and OpenStreetMap street geometry.">
+<meta name="description" content="Interactive, poster-grade public transport maps of ten cities, built from official GTFS feeds and OpenStreetMap street geometry.">
 <style>
 :root {
   --kmk: #0059a9;
@@ -80,6 +80,7 @@ header p.sub {
 .chip .sw.tram-gr { background: #7d2b8b; }
 .chip .sw.metro-ath { background: linear-gradient(90deg, #009550 33%, #e30613 33% 66%, #1e9cd7 66%); }
 .chip .sw.metro-th { background: #e30613; }
+.chip .sw.metro-vie { background: linear-gradient(90deg, #e3000f 0 20%, #a862a4 20% 40%, #ef7c00 40% 60%, #319f49 60% 80%, #9d6830 80%); }
 .chip .sw.metro-buc { background: linear-gradient(90deg, #f8c301 0 20%, #495676 20% 40%, #da251c 40% 60%, #3c746b 60% 80%, #f7951e 80%); }
 .chip .sw.metro-cai { background: linear-gradient(90deg, #0088ce 50%, #e30613 50%); }
 .open {
@@ -179,6 +180,21 @@ footer a:hover { text-decoration: underline; }
         <span class="chip"><span class="sw"></span>164 bus</span>
         <span class="chip"><span class="sw trolley"></span>16 trolleybus</span>
         <span class="chip"><span class="sw tram"></span>11 tram</span>
+      </div>
+      <span class="open">Open the map →</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/vienna-bus-map/">
+    <div class="thumb"><img src="thumbs/vienna.svg" alt="Vienna network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Vienna</h2>
+      <div class="op">Wiener Linien &middot; Badner Bahn (Wiener Lokalbahnen)</div>
+      <div class="stats">189 lines · 4,196 stops · the sharpest match of the family</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>154 bus</span>
+        <span class="chip"><span class="sw tram"></span>30 tram</span>
+        <span class="chip"><span class="sw metro-vie"></span>5 U-Bahn</span>
       </div>
       <span class="open">Open the map →</span>
     </div>
