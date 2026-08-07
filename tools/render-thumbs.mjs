@@ -6,7 +6,18 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const HUB = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+// The sibling projects used to live next to this repo; on 2026-08-07 they moved
+// into "folder bez nazwy" one level down. Both places are searched, so the tool
+// keeps working wherever a project happens to sit.
 const DESK = path.resolve(HUB, '..');
+const ROOTS = [DESK, path.join(DESK, 'folder bez nazwy')];
+const findRepo = (repo) => {
+  for (const r of ROOTS) {
+    const p = path.join(r, repo);
+    if (fs.existsSync(path.join(p, 'docs', 'data', 'streets.geojson'))) return p;
+  }
+  throw new Error(`cannot find ${repo} under: ${ROOTS.join(' | ')}`);
+};
 const OUT = path.join(HUB, 'docs', 'thumbs');
 
 const CITIES = [
@@ -18,6 +29,7 @@ const CITIES = [
   { repo: 'vienna-bus-map', slug: 'vienna' },
   { repo: 'bucharest-bus-map', slug: 'bucharest' },
   { repo: 'sofia-bus-map', slug: 'sofia' },
+  { repo: 'istanbul-bus-map', slug: 'istanbul' },
   { repo: 'athens-bus-map', slug: 'athens' },
   { repo: 'thessaloniki-bus-map', slug: 'thessaloniki' },
   { repo: 'cairo-bus-map', slug: 'cairo' },
@@ -28,7 +40,7 @@ const TOL = 0.8; // px decimation tolerance
 const BUS = '#0059a9';
 
 for (const { repo, slug } of CITIES) {
-  const file = path.join(DESK, repo, 'docs', 'data', 'streets.geojson');
+  const file = path.join(findRepo(repo), 'docs', 'data', 'streets.geojson');
   const geo = JSON.parse(fs.readFileSync(file));
   let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
   const segs = [];
