@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BUSMAN 4o 2026 — Public Transport Network Maps</title>
-<meta name="description" content="Interactive, poster-grade public transport maps of twelve cities, built from official GTFS feeds and OpenStreetMap street geometry.">
+<meta name="description" content="Interactive, poster-grade public transport maps of thirteen cities, built from official GTFS feeds and OpenStreetMap street geometry.">
 <style>
 :root {
   --kmk: #0059a9;
@@ -85,6 +85,7 @@ header p.sub {
 .chip .sw.metro-sof { background: linear-gradient(90deg, #eb2227 0 25%, #1c75bc 25% 50%, #39b54a 50% 75%, #ffde17 75%); }
 .chip .sw.metro-ist { background: linear-gradient(90deg, #e32726 0 20%, #009a4c 20% 40%, #00a8e1 40% 60%, #e91e76 60% 80%, #00539f 80%); }
 .chip .sw.metro-cai { background: linear-gradient(90deg, #0088ce 50%, #e30613 50%); }
+.chip .sw.wkd { background: #a518a3; }
 .open {
   margin-top: 8px;
   align-self: flex-start;
@@ -182,6 +183,20 @@ footer a:hover { text-decoration: underline; }
         <span class="chip"><span class="sw"></span>164 bus</span>
         <span class="chip"><span class="sw trolley"></span>16 trolleybus</span>
         <span class="chip"><span class="sw tram"></span>11 tram</span>
+      </div>
+      <span class="open">Open the map →</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/grodzisk-bus-map/">
+    <div class="thumb"><img src="thumbs/grodzisk.svg" alt="Grodzisk Mazowiecki region network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Grodzisk Mazowiecki Region</h2>
+      <div class="op">GPA &mdash; Grodziskie Przewozy Autobusowe &middot; WKD</div>
+      <div class="stats">66 lines &middot; 1,781 stops &middot; a county network, no shapes and no direction_id</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>65 bus</span>
+        <span class="chip"><span class="sw wkd"></span>1 railway</span>
       </div>
       <span class="open">Open the map →</span>
     </div>

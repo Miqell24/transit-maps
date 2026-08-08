@@ -26,6 +26,7 @@ const CITIES = [
   { repo: 'gzm-bus-map', slug: 'gzm' },
   { repo: 'rybnik-bus-map', slug: 'rybnik' },
   { repo: 'trojmiasto-bus-map', slug: 'tricity' },
+  { repo: 'grodzisk-bus-map', slug: 'grodzisk' },
   { repo: 'vienna-bus-map', slug: 'vienna' },
   { repo: 'bucharest-bus-map', slug: 'bucharest' },
   { repo: 'sofia-bus-map', slug: 'sofia' },

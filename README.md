@@ -1,6 +1,6 @@
 # transit-maps — city picker portal
 
-One-page portal for the twelve-city transit map family. Live: **https://miqell24.github.io/transit-maps/**
+One-page portal for the thirteen-city transit map family. Live: **https://miqell24.github.io/transit-maps/**
 
 Each card shows a miniature of the city's real route network (rendered from that map's published
 `docs/data/streets.geojson`), line/stop counts per mode, and links to the interactive map:
@@ -25,7 +25,7 @@ Every map also carries a "Switch city" control in its panel, linking the whole f
 ## Layout
 
 - `docs/` — the published site (GitHub Pages serves `main:/docs`): `index.html` + `thumbs/*.svg`.
-- `tools/render-thumbs.mjs` — regenerates the twelve SVG miniatures. Requires the sibling map
+- `tools/render-thumbs.mjs` — regenerates the thirteen SVG miniatures. Requires the sibling map
   projects checked out next to this repo (`../krakow-bus-map`, …). Run after any city is rebuilt:
 
   ```
