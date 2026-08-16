@@ -29,11 +29,20 @@ const CITIES = [
   { repo: 'grodzisk-bus-map', slug: 'grodzisk' },
   { repo: 'vienna-bus-map', slug: 'vienna' },
   { repo: 'bucharest-bus-map', slug: 'bucharest' },
+  { repo: 'cluj-bus-map', slug: 'cluj' },
+  { repo: 'timisoara-bus-map', slug: 'timisoara' },
+  { repo: 'oradea-bus-map', slug: 'oradea' },
+  { repo: 'brasov-bus-map', slug: 'brasov' },
+  { repo: 'iasi-bus-map', slug: 'iasi' },
+  { repo: 'constanta-bus-map', slug: 'constanta' },
+  { repo: 'belgrade-bus-map', slug: 'belgrade' },
   { repo: 'sofia-bus-map', slug: 'sofia' },
   { repo: 'istanbul-bus-map', slug: 'istanbul' },
   { repo: 'athens-bus-map', slug: 'athens' },
   { repo: 'thessaloniki-bus-map', slug: 'thessaloniki' },
+  { repo: 'naples-bus-map', slug: 'naples' },
   { repo: 'cairo-bus-map', slug: 'cairo' },
+  { repo: 'rio-bus-map', slug: 'rio' },
 ];
 
 const W = 700; // viewBox width; height follows the network's aspect ratio
