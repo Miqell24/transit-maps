@@ -44,6 +44,9 @@ const CITIES = [
   { repo: 'cairo-bus-map', slug: 'cairo' },
   { repo: 'rio-bus-map', slug: 'rio' },
   { repo: 'ba-bus-map', slug: 'ba' },
+  { repo: 'budapest-bus-map', slug: 'budapest' },
+  { repo: 'paris-bus-map', slug: 'paris' },
+  { repo: 'copenhagen-bus-map', slug: 'copenhagen' },
 ];
 
 const W = 700; // viewBox width; height follows the network's aspect ratio

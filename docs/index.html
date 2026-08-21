@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BUSMAN 4o 2026 — Public Transport Network Maps</title>
-<meta name="description" content="Interactive, poster-grade public transport maps of thirteen cities, built from official GTFS feeds and OpenStreetMap street geometry.">
+<meta name="description" content="Interactive, poster-grade public transport maps of twenty-six cities, built from official GTFS feeds and OpenStreetMap street geometry.">
 <style>
 :root {
   --kmk: #0059a9;
@@ -88,6 +88,11 @@ header p.sub {
 .chip .sw.metro-nap { background: linear-gradient(90deg, #F8E414 0 25%, #C8102E 25% 50%, #0069B4 50% 75%, #7d2b8b 75%); }
 .chip .sw.metro-cai { background: linear-gradient(90deg, #0088ce 50%, #e30613 50%); }
 .chip .sw.wkd { background: #a518a3; }
+.chip .sw.metro-bud { background: linear-gradient(90deg, #FFD800 0 25%, #E41F18 25% 50%, #005CA5 50% 75%, #4CA22F 75%); }
+.chip .sw.hev { background: linear-gradient(90deg, #8A236C 0 25%, #7B4400 25% 50%, #EE7101 50% 75%, #ED6E86 75%); }
+.chip .sw.metro-par { background: linear-gradient(90deg, #FFBE00 0 17%, #0055C8 17% 33%, #6E6E00 33% 50%, #A0006E 50% 67%, #FF5A00 67% 83%, #640082 83%); }
+.chip .sw.metro-cph { background: linear-gradient(90deg, #007756 0 25%, #FFCC00 25% 50%, #E40037 50% 75%, #009CD3 75%); }
+.chip .sw.stog { background: linear-gradient(90deg, #00A7E3 0 17%, #55AB26 17% 33%, #F29400 33% 50%, #857AB3 50% 67%, #FCC300 67% 83%, #E64215 83%); }
 .open {
   margin-top: 8px;
   align-self: flex-start;
@@ -216,6 +221,23 @@ footer a:hover { text-decoration: underline; }
         <span class="chip"><span class="sw metro-vie"></span>5 U-Bahn</span>
       </div>
       <span class="open">Open the map →</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/budapest-bus-map/">
+    <div class="thumb"><img src="thumbs/budapest.svg" alt="Budapest network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Budapest</h2>
+      <div class="op">BKK &mdash; Budapesti K&ouml;zleked&eacute;si K&ouml;zpont &middot; M&Aacute;V-H&Eacute;V</div>
+      <div class="stats">376 lines &middot; 5,518 stops &middot; 8,427 km &mdash; incl. the Fogasker&eacute;k&#369; and the H&Eacute;V out to R&aacute;ckeve</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>303 bus</span>
+        <span class="chip"><span class="sw trolley"></span>17 trolleybus</span>
+        <span class="chip"><span class="sw tram"></span>47 tram</span>
+        <span class="chip"><span class="sw metro-bud"></span>4 metro</span>
+        <span class="chip"><span class="sw hev"></span>5 H&Eacute;V</span>
+      </div>
+      <span class="open">Open the map &rarr;</span>
     </div>
   </a>
 
@@ -407,6 +429,37 @@ footer a:hover { text-decoration: underline; }
         <span class="chip"><span class="sw trolley"></span>4 trolleybus</span>
         <span class="chip"><span class="sw tram"></span>3 tram</span>
         <span class="chip"><span class="sw metro-nap"></span>17 metro, funicular &amp; EAV</span>
+      </div>
+      <span class="open">Open the map &rarr;</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/paris-bus-map/">
+    <div class="thumb"><img src="thumbs/paris.svg" alt="Paris network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Paris</h2>
+      <div class="op">&Icirc;le-de-France Mobilit&eacute;s &mdash; RATP and the Paris-area operators</div>
+      <div class="stats">430 lines &middot; 12,628 stops &middot; 9,424 km &mdash; Paris and the petite couronne, the whole m&eacute;tro</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>399 bus</span>
+        <span class="chip"><span class="sw tram"></span>15 tram</span>
+        <span class="chip"><span class="sw metro-par"></span>16 m&eacute;tro</span>
+      </div>
+      <span class="open">Open the map &rarr;</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/copenhagen-bus-map/">
+    <div class="thumb"><img src="thumbs/copenhagen.svg" alt="Copenhagen network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Copenhagen</h2>
+      <div class="op">Movia &middot; Metroselskabet &middot; DSB S-tog &middot; Hovedstadens Letbane</div>
+      <div class="stats">96 lines &middot; 3,531 stops &middot; 3,305 km &mdash; all seven S-tog lines</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>84 bus</span>
+        <span class="chip"><span class="sw tram"></span>1 letbane</span>
+        <span class="chip"><span class="sw metro-cph"></span>4 metro</span>
+        <span class="chip"><span class="sw stog"></span>7 S-tog</span>
       </div>
       <span class="open">Open the map &rarr;</span>
     </div>
