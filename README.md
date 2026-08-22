@@ -1,6 +1,6 @@
 # transit-maps — city picker portal
 
-One-page portal for the twenty-six-city transit map family. Live: **https://miqell24.github.io/transit-maps/**
+One-page portal for the twenty-seven-city transit map family. Live: **https://miqell24.github.io/transit-maps/**
 
 Each card shows a miniature of the city's real route network (rendered from that map's published
 `docs/data/streets.geojson`), line/stop counts per mode, and links to the interactive map:
@@ -13,6 +13,7 @@ Each card shows a miniature of the city's real route network (rendered from that
 | Rybnik Region | `rybnik-bus-map` | https://miqell24.github.io/rybnik-bus-map/ |
 | Tricity (Gdańsk–Gdynia–Sopot) | `trojmiasto-bus-map` | https://miqell24.github.io/trojmiasto-bus-map/ |
 | Grodzisk Mazowiecki Region | `grodzisk-bus-map` | https://miqell24.github.io/grodzisk-bus-map/ |
+| Warsaw & Grodzisk Mazowiecki | `warsaw-bus-map` | https://miqell24.github.io/warsaw-bus-map/ |
 | Vienna | `vienna-bus-map` | https://miqell24.github.io/vienna-bus-map/ |
 | Budapest | `budapest-bus-map` | https://miqell24.github.io/budapest-bus-map/ |
 | Bucharest & Ilfov | `bucharest-bus-map` | https://miqell24.github.io/bucharest-bus-map/ |
@@ -39,7 +40,7 @@ Every map also carries a "Switch city" control in its panel, linking the whole f
 ## Layout
 
 - `docs/` — the published site (GitHub Pages serves `main:/docs`): `index.html` + `thumbs/*.svg`.
-- `tools/render-thumbs.mjs` — regenerates the twenty-six SVG miniatures. Requires the sibling map
+- `tools/render-thumbs.mjs` — regenerates the twenty-seven SVG miniatures. Requires the sibling map
   projects checked out next to this repo (`../krakow-bus-map`, …). Run after any city is rebuilt:
 
   ```
