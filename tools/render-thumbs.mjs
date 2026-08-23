@@ -22,6 +22,7 @@ const OUT = path.join(HUB, 'docs', 'thumbs');
 
 const CITIES = [
   { repo: 'krakow-bus-map', slug: 'krakow' },
+  { repo: 'krakow-mld-bus-map', slug: 'krakow-mld' },
   { repo: 'poznan-bus-map', slug: 'poznan' },
   { repo: 'gzm-bus-map', slug: 'gzm' },
   { repo: 'rybnik-bus-map', slug: 'rybnik' },
