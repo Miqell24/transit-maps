@@ -49,6 +49,7 @@ const CITIES = [
   { repo: 'paris-bus-map', slug: 'paris' },
   { repo: 'copenhagen-bus-map', slug: 'copenhagen' },
   { repo: 'warsaw-bus-map', slug: 'warsaw' },
+  { repo: 'lodz-bus-map', slug: 'lodz' },
 ];
 
 const W = 700; // viewBox width; height follows the network's aspect ratio
