@@ -43,6 +43,7 @@ const CITIES = [
   { repo: 'thessaloniki-bus-map', slug: 'thessaloniki' },
   { repo: 'naples-bus-map', slug: 'naples' },
   { repo: 'cairo-bus-map', slug: 'cairo' },
+  { repo: 'addis-bus-map', slug: 'addis' },
   { repo: 'rio-bus-map', slug: 'rio' },
   { repo: 'ba-bus-map', slug: 'ba' },
   { repo: 'budapest-bus-map', slug: 'budapest' },

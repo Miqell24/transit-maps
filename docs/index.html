@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BUSMAN 4o 2026 — Public Transport Network Maps</title>
-<meta name="description" content="Interactive, poster-grade public transport maps of twenty-nine cities, built from official GTFS feeds and OpenStreetMap street geometry.">
+<meta name="description" content="Interactive, poster-grade public transport maps of thirty cities, built from official GTFS feeds and OpenStreetMap street geometry.">
 <style>
 :root {
   --kmk: #0059a9;
@@ -78,6 +78,7 @@ header p.sub {
 .chip .sw.trolley { background: var(--trolley); }
 .chip .sw.mline { background: var(--mline); }
 .chip .sw.tram-gr { background: #7d2b8b; }
+.chip .sw.lrt-addis { background: linear-gradient(90deg, #0f9d58 0 50%, #0088ce 50%); }
 .chip .sw.metro-ath { background: linear-gradient(90deg, #009550 33%, #e30613 33% 66%, #1e9cd7 66%); }
 .chip .sw.metro-th { background: #e30613; }
 .chip .sw.metro-vie { background: linear-gradient(90deg, #e3000f 0 20%, #a862a4 20% 40%, #ef7c00 40% 60%, #319f49 60% 80%, #9d6830 80%); }
@@ -524,6 +525,21 @@ footer a:hover { text-decoration: underline; }
         <span class="chip"><span class="sw metro-cai"></span>2 metro</span>
       </div>
       <span class="open">Open the map →</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/addis-bus-map/">
+    <div class="thumb"><img src="thumbs/addis.svg" alt="Addis Ababa network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Addis Ababa</h2>
+      <div class="op">Anbessa City Bus &middot; Sheger Mass Transport &middot; the minibus taxi associations &middot; Light Rail</div>
+      <div class="stats">447 lines &middot; 2,234 stops &middot; 9,465 km &mdash; surveyed into OpenStreetMap by AddisMapTransit; the minibus network drawn beside the formal one</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>194 bus</span>
+        <span class="chip"><span class="sw mline"></span>251 minibus taxi</span>
+        <span class="chip"><span class="sw lrt-addis"></span>2 light rail</span>
+      </div>
+      <span class="open">Open the map &rarr;</span>
     </div>
   </a>
   <a class="card" href="https://miqell24.github.io/rio-bus-map/">
