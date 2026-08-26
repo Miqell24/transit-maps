@@ -119,6 +119,24 @@ footer {
 }
 footer a { color: var(--kmk); font-weight: 600; text-decoration: none; }
 footer a:hover { text-decoration: underline; }
+
+/* Search — type a city instead of scrolling the grid */
+.search { margin: 22px 0 0; display: flex; align-items: center; gap: 12px; }
+.search input {
+  flex: 1 1 auto;
+  min-width: 0;
+  font: inherit;
+  font-size: 15px;
+  color: inherit;
+  padding: 11px 16px;
+  border: 1px solid #ccd6e4;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 18px rgba(0, 30, 70, 0.10);
+}
+.search input:focus { outline: none; border-color: var(--kmk); box-shadow: 0 0 0 3px rgba(0, 89, 169, 0.18); }
+.search #q-count { flex: 0 0 auto; font-size: 13px; font-weight: 600; color: #667; }
+#q-none { margin: 26px 4px 0; font-size: 14.5px; color: #667; }
 </style>
 </head>
 <body>
@@ -126,6 +144,12 @@ footer a:hover { text-decoration: underline; }
 <header>
   <h1><span style="text-transform:none">BUSMAN 4o 2026</span><br>Public Transport Network Maps</h1>
 </header>
+
+<div class="search">
+  <input id="q" type="search" placeholder="Type a city — Kraków, Wien, São Paulo&hellip;" autocomplete="off" spellcheck="false" aria-label="Search the maps">
+  <span id="q-count" hidden></span>
+</div>
+
 
 <main class="grid">
   <a class="card" href="https://miqell24.github.io/krakow-bus-map/">
@@ -607,6 +631,9 @@ footer a:hover { text-decoration: underline; }
 
 </main>
 
+<p id="q-none" hidden>No map matches — try the city’s English, local or Polish name.</p>
+
+
 <footer>
   Card miniatures are the actual route networks, rendered from each map's published data.
   Route geometry: official GTFS feeds map-matched onto OpenStreetMap · base map tiles on the interactive maps:
@@ -614,5 +641,36 @@ footer a:hover { text-decoration: underline; }
   <a href="https://github.com/Miqell24">github.com/Miqell24</a>
 </footer>
 </div>
+<script>
+(() => {
+  // Search: filters the cards by city, operator, local name or Polish exonym,
+  // diacritic-insensitive. Enter opens the first match, "/" focuses the box.
+  const ALT = {"krakow-bus-map": "Kraków Cracow Polska Poland Małopolska KMK MPK", "krakow-mld-bus-map": "Kraków MLD Małopolska Wieliczka Koleje Małopolskie Polska Poland", "poznan-bus-map": "Poznań Polska Poland ZTM", "gzm-bus-map": "Katowice GZM Śląsk Silesia Metropolia Tychy Gliwice Zabrze Sosnowiec Bytom Polska Poland", "rybnik-bus-map": "Rybnik Żory Jastrzębie-Zdrój Wodzisław Polska Poland", "trojmiasto-bus-map": "Trójmiasto Tricity Gdańsk Gdynia Sopot Wejherowo Rumia Polska Poland", "grodzisk-bus-map": "Grodzisk Mazowiecki WKD Milanówek Polanówek Polska Poland", "warsaw-bus-map": "Warszawa Warsaw Mazowsze ZTM WTP Metro SKM Polska Poland", "lodz-bus-map": "Łódź Lodz Polska Poland MPK ZDiT", "vienna-bus-map": "Wiedeń Wien Vienna Austria Österreich Wiener Linien", "budapest-bus-map": "Budapeszt Budapest Węgry Hungary Magyarország BKK", "paris-bus-map": "Paryż Paris Francja France IDFM RATP", "copenhagen-bus-map": "Kopenhaga København Copenhagen Dania Denmark", "bucharest-bus-map": "Bukareszt București Bucharest Ilfov Rumunia Romania STB", "cluj-bus-map": "Kluż Cluj-Napoca Kolozsvár Rumunia Romania", "timisoara-bus-map": "Timișoara Temeszwar Temesvár Rumunia Romania", "oradea-bus-map": "Oradea Nagyvárad Rumunia Romania", "brasov-bus-map": "Braszów Brașov Rumunia Romania", "iasi-bus-map": "Jassy Iași Rumunia Romania", "constanta-bus-map": "Konstanca Constanța Rumunia Romania", "belgrade-bus-map": "Belgrad Beograd Belgrade Serbia Srbija Београд", "sofia-bus-map": "Sofia София Bułgaria Bulgaria", "istanbul-bus-map": "Stambuł İstanbul Istanbul Turcja Turkey Türkiye İETT", "athens-bus-map": "Ateny Athens Αθήνα Athina Grecja Greece OASA", "thessaloniki-bus-map": "Saloniki Thessaloniki Θεσσαλονίκη Grecja Greece", "naples-bus-map": "Neapol Napoli Naples Włochy Italy Italia ANM", "cairo-bus-map": "Kair Cairo القاهرة Egipt Egypt", "addis-bus-map": "Addis Abeba Ababa Etiopia Ethiopia Anbessa", "mexico-city-bus-map": "Meksyk Mexico City CDMX Ciudad de México Metrobús", "sao-paulo-bus-map": "São Paulo Brazylia Brazil SPTrans", "rio-bus-map": "Rio de Janeiro Brazylia Brazil BRT", "ba-bus-map": "Buenos Aires Argentyna Argentina colectivo subte"};
+  const norm = (s) => (s || '').toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '').replace(/ł/g, 'l').replace(/ø/g, 'o').replace(/đ/g, 'd').replace(/ß/g, 'ss').replace(/æ/g, 'ae').replace(/ı/g, 'i');
+  const cards = [...document.querySelectorAll('.card')];
+  for (const c of cards) {
+    const slug = new URL(c.href).pathname.split('/').filter(Boolean)[0] || '';
+    const op = c.querySelector('.op');
+    c.dataset.q = norm(c.querySelector('h2').textContent + ' ' + (op ? op.textContent : '') + ' ' + (ALT[slug] || ''));
+  }
+  const q = document.getElementById('q'), count = document.getElementById('q-count'), none = document.getElementById('q-none');
+  const apply = () => {
+    const nq = norm(q.value.trim());
+    let n = 0;
+    for (const c of cards) { const hit = !nq || c.dataset.q.includes(nq); c.style.display = hit ? '' : 'none'; if (hit) n++; }
+    count.hidden = !nq;
+    count.textContent = n + ' of ' + cards.length + ' maps';
+    none.hidden = !nq || n > 0;
+  };
+  q.addEventListener('input', apply);
+  q.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { const f = cards.find((c) => c.style.display !== 'none'); if (f) location.href = f.href; }
+    else if (e.key === 'Escape') { q.value = ''; apply(); }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === '/' && !/^(input|textarea)$/i.test(e.target.tagName || '')) { e.preventDefault(); q.focus(); }
+  });
+})();
+</script>
 </body>
 </html>
