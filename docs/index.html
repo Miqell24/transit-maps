@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BUSMAN 4o 2026 — Public Transport Network Maps</title>
-<meta name="description" content="Interactive, poster-grade public transport maps of thirty-two cities, built from official GTFS feeds and OpenStreetMap street geometry.">
+<meta name="description" content="Interactive, poster-grade public transport maps of thirty-three cities, built from official GTFS feeds and OpenStreetMap street geometry.">
 <style>
 :root {
   --kmk: #0059a9;
@@ -97,6 +97,8 @@ header p.sub {
 .chip .sw.hev { background: linear-gradient(90deg, #8A236C 0 25%, #7B4400 25% 50%, #EE7101 50% 75%, #ED6E86 75%); }
 .chip .sw.metro-par { background: linear-gradient(90deg, #FFBE00 0 17%, #0055C8 17% 33%, #6E6E00 33% 50%, #A0006E 50% 67%, #FF5A00 67% 83%, #640082 83%); }
 .chip .sw.metro-cph { background: linear-gradient(90deg, #007756 0 25%, #FFCC00 25% 50%, #E40037 50% 75%, #009CD3 75%); }
+.chip .sw.tube-lon { background: linear-gradient(90deg, #B36305 0 9%, #E32017 9% 18%, #FFD300 18% 27%, #00782A 27% 36%, #F3A9BB 36% 45%, #A0A5A9 45% 54%, #9B0056 54% 63%, #000 63% 72%, #003688 72% 81%, #0098D4 81% 90%, #95CDBA 90%); }
+.chip .sw.og-lon { background: linear-gradient(90deg, #FAA61A 0 17%, #0077AD 17% 33%, #5BBD72 33% 50%, #D22730 50% 67%, #893B67 67% 83%, #606667 83%); }
 .chip .sw.stog { background: linear-gradient(90deg, #00A7E3 0 17%, #55AB26 17% 33%, #F29400 33% 50%, #857AB3 50% 67%, #FCC300 67% 83%, #E64215 83%); }
 .open {
   margin-top: 8px;
@@ -539,6 +541,22 @@ footer a:hover { text-decoration: underline; }
     </div>
   </a>
 
+  <a class="card" href="https://miqell24.github.io/london-bus-map/">
+    <div class="thumb"><img src="thumbs/london.svg" alt="London network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>London</h2>
+      <div class="op">TfL &middot; London Underground &middot; DLR &middot; London Overground &middot; Elizabeth line</div>
+      <div class="stats">767 lines &middot; 22,863 stops &middot; 6,238 km of streets and tracks &mdash; every TfL-contracted bus and the whole railway family, every Underground branch drawn</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>746 bus</span>
+        <span class="chip"><span class="sw tube-lon"></span>11 Underground</span>
+        <span class="chip"><span class="sw og-lon"></span>6 Overground</span>
+        <span class="chip"><span class="sw" style="background:linear-gradient(90deg,#00A4A7 0 33%,#6950A1 33% 66%,#DC241F 66%)"></span>DLR &middot; Elizabeth &middot; cable car</span>
+      </div>
+      <span class="open">Open the map &rarr;</span>
+    </div>
+  </a>
+
   <a class="card" href="https://miqell24.github.io/cairo-bus-map/">
     <div class="thumb"><img src="thumbs/cairo.svg" alt="Cairo network miniature" loading="lazy"></div>
     <div class="body">
@@ -645,7 +663,7 @@ footer a:hover { text-decoration: underline; }
 (() => {
   // Search: filters the cards by city, operator, local name or Polish exonym,
   // diacritic-insensitive. Enter opens the first match, "/" focuses the box.
-  const ALT = {"krakow-bus-map": "Kraków Cracow Polska Poland Małopolska KMK MPK", "krakow-mld-bus-map": "Kraków MLD Małopolska Wieliczka Koleje Małopolskie Polska Poland", "poznan-bus-map": "Poznań Polska Poland ZTM", "gzm-bus-map": "Katowice GZM Śląsk Silesia Metropolia Tychy Gliwice Zabrze Sosnowiec Bytom Polska Poland", "rybnik-bus-map": "Rybnik Żory Jastrzębie-Zdrój Wodzisław Polska Poland", "trojmiasto-bus-map": "Trójmiasto Tricity Gdańsk Gdynia Sopot Wejherowo Rumia Polska Poland", "grodzisk-bus-map": "Grodzisk Mazowiecki WKD Milanówek Polanówek Polska Poland", "warsaw-bus-map": "Warszawa Warsaw Mazowsze ZTM WTP Metro SKM Polska Poland", "lodz-bus-map": "Łódź Lodz Polska Poland MPK ZDiT", "vienna-bus-map": "Wiedeń Wien Vienna Austria Österreich Wiener Linien", "budapest-bus-map": "Budapeszt Budapest Węgry Hungary Magyarország BKK", "paris-bus-map": "Paryż Paris Francja France IDFM RATP", "copenhagen-bus-map": "Kopenhaga København Copenhagen Dania Denmark", "bucharest-bus-map": "Bukareszt București Bucharest Ilfov Rumunia Romania STB", "cluj-bus-map": "Kluż Cluj-Napoca Kolozsvár Rumunia Romania", "timisoara-bus-map": "Timișoara Temeszwar Temesvár Rumunia Romania", "oradea-bus-map": "Oradea Nagyvárad Rumunia Romania", "brasov-bus-map": "Braszów Brașov Rumunia Romania", "iasi-bus-map": "Jassy Iași Rumunia Romania", "constanta-bus-map": "Konstanca Constanța Rumunia Romania", "belgrade-bus-map": "Belgrad Beograd Belgrade Serbia Srbija Београд", "sofia-bus-map": "Sofia София Bułgaria Bulgaria", "istanbul-bus-map": "Stambuł İstanbul Istanbul Turcja Turkey Türkiye İETT", "athens-bus-map": "Ateny Athens Αθήνα Athina Grecja Greece OASA", "thessaloniki-bus-map": "Saloniki Thessaloniki Θεσσαλονίκη Grecja Greece", "naples-bus-map": "Neapol Napoli Naples Włochy Italy Italia ANM", "cairo-bus-map": "Kair Cairo القاهرة Egipt Egypt", "addis-bus-map": "Addis Abeba Ababa Etiopia Ethiopia Anbessa", "mexico-city-bus-map": "Meksyk Mexico City CDMX Ciudad de México Metrobús", "sao-paulo-bus-map": "São Paulo Brazylia Brazil SPTrans", "rio-bus-map": "Rio de Janeiro Brazylia Brazil BRT", "ba-bus-map": "Buenos Aires Argentyna Argentina colectivo subte"};
+  const ALT = {"krakow-bus-map": "Kraków Cracow Polska Poland Małopolska KMK MPK", "krakow-mld-bus-map": "Kraków MLD Małopolska Wieliczka Koleje Małopolskie Polska Poland", "poznan-bus-map": "Poznań Polska Poland ZTM", "gzm-bus-map": "Katowice GZM Śląsk Silesia Metropolia Tychy Gliwice Zabrze Sosnowiec Bytom Polska Poland", "rybnik-bus-map": "Rybnik Żory Jastrzębie-Zdrój Wodzisław Polska Poland", "trojmiasto-bus-map": "Trójmiasto Tricity Gdańsk Gdynia Sopot Wejherowo Rumia Polska Poland", "grodzisk-bus-map": "Grodzisk Mazowiecki WKD Milanówek Polanówek Polska Poland", "warsaw-bus-map": "Warszawa Warsaw Mazowsze ZTM WTP Metro SKM Polska Poland", "lodz-bus-map": "Łódź Lodz Polska Poland MPK ZDiT", "vienna-bus-map": "Wiedeń Wien Vienna Austria Österreich Wiener Linien", "budapest-bus-map": "Budapeszt Budapest Węgry Hungary Magyarország BKK", "paris-bus-map": "Paryż Paris Francja France IDFM RATP", "london-bus-map": "Londyn London United Kingdom Anglia England TfL Underground", "copenhagen-bus-map": "Kopenhaga København Copenhagen Dania Denmark", "bucharest-bus-map": "Bukareszt București Bucharest Ilfov Rumunia Romania STB", "cluj-bus-map": "Kluż Cluj-Napoca Kolozsvár Rumunia Romania", "timisoara-bus-map": "Timișoara Temeszwar Temesvár Rumunia Romania", "oradea-bus-map": "Oradea Nagyvárad Rumunia Romania", "brasov-bus-map": "Braszów Brașov Rumunia Romania", "iasi-bus-map": "Jassy Iași Rumunia Romania", "constanta-bus-map": "Konstanca Constanța Rumunia Romania", "belgrade-bus-map": "Belgrad Beograd Belgrade Serbia Srbija Београд", "sofia-bus-map": "Sofia София Bułgaria Bulgaria", "istanbul-bus-map": "Stambuł İstanbul Istanbul Turcja Turkey Türkiye İETT", "athens-bus-map": "Ateny Athens Αθήνα Athina Grecja Greece OASA", "thessaloniki-bus-map": "Saloniki Thessaloniki Θεσσαλονίκη Grecja Greece", "naples-bus-map": "Neapol Napoli Naples Włochy Italy Italia ANM", "cairo-bus-map": "Kair Cairo القاهرة Egipt Egypt", "addis-bus-map": "Addis Abeba Ababa Etiopia Ethiopia Anbessa", "mexico-city-bus-map": "Meksyk Mexico City CDMX Ciudad de México Metrobús", "sao-paulo-bus-map": "São Paulo Brazylia Brazil SPTrans", "rio-bus-map": "Rio de Janeiro Brazylia Brazil BRT", "ba-bus-map": "Buenos Aires Argentyna Argentina colectivo subte"};
   const norm = (s) => (s || '').toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '').replace(/ł/g, 'l').replace(/ø/g, 'o').replace(/đ/g, 'd').replace(/ß/g, 'ss').replace(/æ/g, 'ae').replace(/ı/g, 'i');
   const cards = [...document.querySelectorAll('.card')];
   for (const c of cards) {

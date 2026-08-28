@@ -51,6 +51,7 @@ const CITIES = [
   { repo: 'budapest-bus-map', slug: 'budapest' },
   { repo: 'paris-bus-map', slug: 'paris' },
   { repo: 'copenhagen-bus-map', slug: 'copenhagen' },
+  { repo: 'london-bus-map', slug: 'london' },
   { repo: 'warsaw-bus-map', slug: 'warsaw' },
   { repo: 'lodz-bus-map', slug: 'lodz' },
 ];
