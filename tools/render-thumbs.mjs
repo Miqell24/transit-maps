@@ -54,6 +54,20 @@ const CITIES = [
   { repo: 'london-bus-map', slug: 'london' },
   { repo: 'warsaw-bus-map', slug: 'warsaw' },
   { repo: 'lodz-bus-map', slug: 'lodz' },
+  { repo: 'berlin-bus-map', slug: 'berlin' },
+  { repo: 'randstad-bus-map', slug: 'randstad' },
+  { repo: 'stockholm-bus-map', slug: 'stockholm' },
+  { repo: 'goteborg-bus-map', slug: 'goteborg' },
+  { repo: 'plovdiv-bus-map', slug: 'plovdiv' },
+  { repo: 'varna-bus-map', slug: 'varna' },
+  { repo: 'aarhus-bus-map', slug: 'aarhus' },
+  { repo: 'rome-bus-map', slug: 'rome' },
+  { repo: 'tirana-bus-map', slug: 'tirana' },
+  { repo: 'olsztyn-bus-map', slug: 'olsztyn' },
+  { repo: 'nis-bus-map', slug: 'nis' },
+  { repo: 'novi-sad-bus-map', slug: 'novi-sad' },
+  { repo: 'kyiv-bus-map', slug: 'kyiv' },
+  { repo: 'lviv-bus-map', slug: 'lviv' },
 ];
 
 const W = 700; // viewBox width; height follows the network's aspect ratio

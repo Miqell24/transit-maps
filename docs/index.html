@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BUSMAN 4o 2026 — Public Transport Network Maps</title>
-<meta name="description" content="Interactive, poster-grade public transport maps of thirty-three cities, built from official GTFS feeds and OpenStreetMap street geometry.">
+<meta name="description" content="Interactive, poster-grade public transport maps of forty-seven cities, built from official GTFS feeds and OpenStreetMap street geometry.">
 <style>
 :root {
   --kmk: #0059a9;
@@ -94,6 +94,12 @@ header p.sub {
 .chip .sw.metro-waw { background: linear-gradient(90deg, #0000BB 50%, #BB0000 50%); }
 .chip .sw.skm { background: linear-gradient(90deg, #E84A4B 0 25%, #2E8EC8 25% 50%, #FFAC01 50% 75%, #2F7B20 75%); }
 .chip .sw.metro-bud { background: linear-gradient(90deg, #FFD800 0 25%, #E41F18 25% 50%, #005CA5 50% 75%, #4CA22F 75%); }
+.chip .sw.ubahn-ber { background: linear-gradient(90deg, #7DAD4C 0 20%, #DA421E 20% 40%, #F0D722 40% 60%, #009BD5 60% 80%, #F3791D 80%); }
+.chip .sw.sbahn-ber { background: linear-gradient(90deg, #DA6BA2 0 25%, #007734 25% 50%, #EB7405 50% 75%, #AD5937 75%); }
+.chip .sw.tbana-sthlm { background: linear-gradient(90deg, #007DC5 33%, #D71D24 33% 66%, #148541 66%); }
+.chip .sw.pendel-sthlm { background: #F166A7; }
+.chip .sw.metro-rome { background: linear-gradient(90deg, #E27439 0 33%, #0570B5 33% 66%, #008456 66%); }
+.chip .sw.metro-rand { background: linear-gradient(90deg, #187A36 0 17%, #FF6600 17% 33%, #00ADEF 33% 50%, #D81118 50% 67%, #FFF200 67% 83%, #0F3F94 83%); }
 .chip .sw.hev { background: linear-gradient(90deg, #8A236C 0 25%, #7B4400 25% 50%, #EE7101 50% 75%, #ED6E86 75%); }
 .chip .sw.metro-par { background: linear-gradient(90deg, #FFBE00 0 17%, #0055C8 17% 33%, #6E6E00 33% 50%, #A0006E 50% 67%, #FF5A00 67% 83%, #640082 83%); }
 .chip .sw.metro-cph { background: linear-gradient(90deg, #007756 0 25%, #FFCC00 25% 50%, #E40037 50% 75%, #009CD3 75%); }
@@ -285,6 +291,33 @@ footer a:hover { text-decoration: underline; }
     </div>
   </a>
 
+  <a class="card" href="https://miqell24.github.io/olsztyn-bus-map/">
+    <div class="thumb"><img src="thumbs/olsztyn.svg" alt="Olsztyn network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Olsztyn</h2>
+      <div class="op">ZDZiT Olsztyn</div>
+      <div class="stats">38 lines &middot; 317 stops &middot; 917 km &mdash; the first new tram system built in Poland since the war, and a feed with no shapes at all</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>33 bus</span>
+        <span class="chip"><span class="sw tram"></span>5 tram</span>
+      </div>
+      <span class="open">Open the map &rarr;</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/berlin-bus-map/">
+    <div class="thumb"><img src="thumbs/berlin.svg" alt="Berlin network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Berlin</h2>
+      <div class="op">BVG &middot; S-Bahn Berlin &middot; ViP Potsdam &middot; the VBB Umland operators</div>
+      <div class="stats">416 lines &middot; 4,738 stops &middot; 13,710 km &mdash; Berlin, Potsdam and the Brandenburg ring, cut out of the whole Verbund feed</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>359 bus</span>\n        <span class="chip"><span class="sw tram"></span>31 tram</span>\n        <span class="chip"><span class="sw ubahn-ber"></span>10 U-Bahn</span>\n        <span class="chip"><span class="sw sbahn-ber"></span>16 S-Bahn</span>
+      </div>
+      <span class="open">Open the map &rarr;</span>
+    </div>
+  </a>
+
   <a class="card" href="https://miqell24.github.io/vienna-bus-map/">
     <div class="thumb"><img src="thumbs/vienna.svg" alt="Vienna network miniature" loading="lazy"></div>
     <div class="body">
@@ -418,6 +451,36 @@ footer a:hover { text-decoration: underline; }
     </div>
   </a>
 
+  <a class="card" href="https://miqell24.github.io/kyiv-bus-map/">
+    <div class="thumb"><img src="thumbs/kyiv.svg" alt="Kyiv network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Kyiv</h2>
+      <div class="op">Kyivpastrans &middot; the city open-data portal</div>
+      <div class="stats">155 lines &middot; 1,374 poles &middot; 3,419 km &mdash; the whole surface network; three modes all numbered from 1, and no metro in the feed</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>96 bus</span>
+        <span class="chip"><span class="sw trolley"></span>42 trolleybus</span>
+        <span class="chip"><span class="sw tram"></span>17 tram</span>
+      </div>
+      <span class="open">Open the map &rarr;</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/lviv-bus-map/">
+    <div class="thumb"><img src="thumbs/lviv.svg" alt="Lviv network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Lviv</h2>
+      <div class="op">ЛКП Львівелектротранс &middot; seven private bus operators</div>
+      <div class="stats">72 lines &middot; 1,051 stops &middot; 2,090 km &mdash; the trolleybuses come filed as buses and are given back their green</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>55 bus</span>
+        <span class="chip"><span class="sw trolley"></span>9 trolleybus</span>
+        <span class="chip"><span class="sw tram"></span>8 tram</span>
+      </div>
+      <span class="open">Open the map &rarr;</span>
+    </div>
+  </a>
+
   <a class="card" href="https://miqell24.github.io/belgrade-bus-map/">
     <div class="thumb"><img src="thumbs/belgrade.svg" alt="Belgrade network miniature" loading="lazy"></div>
     <div class="body">
@@ -428,6 +491,45 @@ footer a:hover { text-decoration: underline; }
         <span class="chip"><span class="sw"></span>224 bus</span>
         <span class="chip"><span class="sw trolley"></span>6 trolleybus</span>
         <span class="chip"><span class="sw tram"></span>11 tram</span>
+      </div>
+      <span class="open">Open the map &rarr;</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/novi-sad-bus-map/">
+    <div class="thumb"><img src="thumbs/novi-sad.svg" alt="Novi Sad network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Novi Sad</h2>
+      <div class="op">JGSP Novi Sad</div>
+      <div class="stats">99 lines &middot; 989 stops &middot; 3,318 km &mdash; the city grid and the villages, out to Beočin, Sremski Karlovci and Žabalj</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>99 bus</span>
+      </div>
+      <span class="open">Open the map &rarr;</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/nis-bus-map/">
+    <div class="thumb"><img src="thumbs/nis.svg" alt="Niš network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Niš</h2>
+      <div class="op">JGSP Niš-Ekspres</div>
+      <div class="stats">62 lines &middot; 702 stops &middot; 1,647 km &mdash; the Nišava valley; the feed keeps each direction in its own route row</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>62 bus</span>
+      </div>
+      <span class="open">Open the map &rarr;</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/tirana-bus-map/">
+    <div class="thumb"><img src="thumbs/tirana.svg" alt="Tirana network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Tirana</h2>
+      <div class="op">Bashkia e Tiranës</div>
+      <div class="stats">27 lines &middot; 297 stops &middot; 400 km &mdash; the whole public network of the city, which has no rail of any kind</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>27 bus</span>
       </div>
       <span class="open">Open the map &rarr;</span>
     </div>
@@ -446,6 +548,33 @@ footer a:hover { text-decoration: underline; }
         <span class="chip"><span class="sw metro-sof"></span>4 metro</span>
       </div>
       <span class="open">Open the map →</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/plovdiv-bus-map/">
+    <div class="thumb"><img src="thumbs/plovdiv.svg" alt="Plovdiv network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Plovdiv</h2>
+      <div class="op">Four operators under the city contract</div>
+      <div class="stats">29 lines &middot; 472 stops &middot; 992 km &mdash; the family&rsquo;s plainest map: one mode, one colour, one graph</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>29 bus</span>
+      </div>
+      <span class="open">Open the map &rarr;</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/varna-bus-map/">
+    <div class="thumb"><img src="thumbs/varna.svg" alt="Varna network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Varna</h2>
+      <div class="op">Градски транспорт Варна</div>
+      <div class="stats">32 lines &middot; 394 stops &middot; 1,761 km &mdash; 606 shouted stop names rewritten through an OpenStreetMap dictionary</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>29 bus</span>
+        <span class="chip"><span class="sw trolley"></span>3 trolleybus</span>
+      </div>
+      <span class="open">Open the map &rarr;</span>
     </div>
   </a>
 
@@ -494,6 +623,20 @@ footer a:hover { text-decoration: underline; }
       <span class="open">Open the map →</span>
     </div>
   </a>
+  <a class="card" href="https://miqell24.github.io/rome-bus-map/">
+    <div class="thumb"><img src="thumbs/rome.svg" alt="Rome network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Rome</h2>
+      <div class="op">Atac &middot; TROIANI &middot; BIS &middot; ATR Mobility &middot; TUSCIA</div>
+      <div class="stats">427 lines &middot; 5,244 stops &middot; 9,349 km &mdash; Atac plus the provincial operators; the trams and the ex-concession railways are not in this feed</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>423 bus</span>
+        <span class="chip"><span class="sw metro-rome"></span>4 metro</span>
+      </div>
+      <span class="open">Open the map &rarr;</span>
+    </div>
+  </a>
+
   <a class="card" href="https://miqell24.github.io/naples-bus-map/">
     <div class="thumb"><img src="thumbs/naples.svg" alt="Naples network miniature" loading="lazy"></div>
     <div class="body">
@@ -525,6 +668,19 @@ footer a:hover { text-decoration: underline; }
     </div>
   </a>
 
+  <a class="card" href="https://miqell24.github.io/randstad-bus-map/">
+    <div class="thumb"><img src="thumbs/randstad.svg" alt="Randstad &mdash; Amsterdam &middot; Den Haag &middot; Rotterdam network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Randstad &mdash; Amsterdam &middot; Den Haag &middot; Rotterdam</h2>
+      <div class="op">GVB &middot; HTM &middot; RET &middot; Connexxion &middot; Qbuzz &middot; EBS &middot; MeerPlus &middot; Transdev &middot; U-OV</div>
+      <div class="stats">459 lines &middot; 5,129 stops &middot; 14,478 km &mdash; five cities in one frame: three separate tram networks and two unrelated metros</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>404 bus</span>\n        <span class="chip"><span class="sw tram"></span>45 tram</span>\n        <span class="chip"><span class="sw metro-rand"></span>10 metro</span>
+      </div>
+      <span class="open">Open the map &rarr;</span>
+    </div>
+  </a>
+
   <a class="card" href="https://miqell24.github.io/copenhagen-bus-map/">
     <div class="thumb"><img src="thumbs/copenhagen.svg" alt="Copenhagen network miniature" loading="lazy"></div>
     <div class="body">
@@ -536,6 +692,46 @@ footer a:hover { text-decoration: underline; }
         <span class="chip"><span class="sw tram"></span>1 letbane</span>
         <span class="chip"><span class="sw metro-cph"></span>4 metro</span>
         <span class="chip"><span class="sw stog"></span>7 S-tog</span>
+      </div>
+      <span class="open">Open the map &rarr;</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/aarhus-bus-map/">
+    <div class="thumb"><img src="thumbs/aarhus.svg" alt="Aarhus network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Aarhus</h2>
+      <div class="op">Midttrafik &middot; Aarhus Letbane</div>
+      <div class="stats">57 lines &middot; 1,206 stops &middot; 2,798 km &mdash; cut out of the national Rejseplanen feed, with both letbane lines whole to Grenaa and Odder</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>55 bus</span>
+        <span class="chip"><span class="sw tram"></span>2 letbane</span>
+      </div>
+      <span class="open">Open the map &rarr;</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/stockholm-bus-map/">
+    <div class="thumb"><img src="thumbs/stockholm.svg" alt="Stockholm network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Stockholm</h2>
+      <div class="op">SL &mdash; Storstockholms Lokaltrafik</div>
+      <div class="stats">406 lines &middot; 3,027 stops &middot; 12,431 km &mdash; the six lokalbanor, the tunnelbana and the pendeltåg to Uppsala</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>379 bus</span>\n        <span class="chip"><span class="sw tram"></span>15 lokalbanor</span>\n        <span class="chip"><span class="sw tbana-sthlm"></span>7 tunnelbana</span>\n        <span class="chip"><span class="sw pendel-sthlm"></span>5 pendeltåg</span>
+      </div>
+      <span class="open">Open the map &rarr;</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/goteborg-bus-map/">
+    <div class="thumb"><img src="thumbs/goteborg.svg" alt="Göteborg network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Göteborg</h2>
+      <div class="op">Västtrafik</div>
+      <div class="stats">207 lines &middot; 1,737 stops &middot; 5,689 km &mdash; Sweden's largest tram network, and four town networks that all number from 1</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>192 bus</span>\n        <span class="chip"><span class="sw tram"></span>15 tram</span>
       </div>
       <span class="open">Open the map &rarr;</span>
     </div>
@@ -663,7 +859,7 @@ footer a:hover { text-decoration: underline; }
 (() => {
   // Search: filters the cards by city, operator, local name or Polish exonym,
   // diacritic-insensitive. Enter opens the first match, "/" focuses the box.
-  const ALT = {"krakow-bus-map": "Kraków Cracow Polska Poland Małopolska KMK MPK", "krakow-mld-bus-map": "Kraków MLD Małopolska Wieliczka Koleje Małopolskie Polska Poland", "poznan-bus-map": "Poznań Polska Poland ZTM", "gzm-bus-map": "Katowice GZM Śląsk Silesia Metropolia Tychy Gliwice Zabrze Sosnowiec Bytom Polska Poland", "rybnik-bus-map": "Rybnik Żory Jastrzębie-Zdrój Wodzisław Polska Poland", "trojmiasto-bus-map": "Trójmiasto Tricity Gdańsk Gdynia Sopot Wejherowo Rumia Polska Poland", "grodzisk-bus-map": "Grodzisk Mazowiecki WKD Milanówek Polanówek Polska Poland", "warsaw-bus-map": "Warszawa Warsaw Mazowsze ZTM WTP Metro SKM Polska Poland", "lodz-bus-map": "Łódź Lodz Polska Poland MPK ZDiT", "vienna-bus-map": "Wiedeń Wien Vienna Austria Österreich Wiener Linien", "budapest-bus-map": "Budapeszt Budapest Węgry Hungary Magyarország BKK", "paris-bus-map": "Paryż Paris Francja France IDFM RATP", "london-bus-map": "Londyn London United Kingdom Anglia England TfL Underground", "copenhagen-bus-map": "Kopenhaga København Copenhagen Dania Denmark", "bucharest-bus-map": "Bukareszt București Bucharest Ilfov Rumunia Romania STB", "cluj-bus-map": "Kluż Cluj-Napoca Kolozsvár Rumunia Romania", "timisoara-bus-map": "Timișoara Temeszwar Temesvár Rumunia Romania", "oradea-bus-map": "Oradea Nagyvárad Rumunia Romania", "brasov-bus-map": "Braszów Brașov Rumunia Romania", "iasi-bus-map": "Jassy Iași Rumunia Romania", "constanta-bus-map": "Konstanca Constanța Rumunia Romania", "belgrade-bus-map": "Belgrad Beograd Belgrade Serbia Srbija Београд", "sofia-bus-map": "Sofia София Bułgaria Bulgaria", "istanbul-bus-map": "Stambuł İstanbul Istanbul Turcja Turkey Türkiye İETT", "athens-bus-map": "Ateny Athens Αθήνα Athina Grecja Greece OASA", "thessaloniki-bus-map": "Saloniki Thessaloniki Θεσσαλονίκη Grecja Greece", "naples-bus-map": "Neapol Napoli Naples Włochy Italy Italia ANM", "cairo-bus-map": "Kair Cairo القاهرة Egipt Egypt", "addis-bus-map": "Addis Abeba Ababa Etiopia Ethiopia Anbessa", "mexico-city-bus-map": "Meksyk Mexico City CDMX Ciudad de México Metrobús", "sao-paulo-bus-map": "São Paulo Brazylia Brazil SPTrans", "rio-bus-map": "Rio de Janeiro Brazylia Brazil BRT", "ba-bus-map": "Buenos Aires Argentyna Argentina colectivo subte"};
+  const ALT = {"krakow-bus-map": "Kraków Cracow Polska Poland Małopolska KMK MPK", "krakow-mld-bus-map": "Kraków MLD Małopolska Wieliczka Koleje Małopolskie Polska Poland", "poznan-bus-map": "Poznań Polska Poland ZTM", "gzm-bus-map": "Katowice GZM Śląsk Silesia Metropolia Tychy Gliwice Zabrze Sosnowiec Bytom Polska Poland", "rybnik-bus-map": "Rybnik Żory Jastrzębie-Zdrój Wodzisław Polska Poland", "trojmiasto-bus-map": "Trójmiasto Tricity Gdańsk Gdynia Sopot Wejherowo Rumia Polska Poland", "grodzisk-bus-map": "Grodzisk Mazowiecki WKD Milanówek Polanówek Polska Poland", "warsaw-bus-map": "Warszawa Warsaw Mazowsze ZTM WTP Metro SKM Polska Poland", "lodz-bus-map": "Łódź Lodz Polska Poland MPK ZDiT", "vienna-bus-map": "Wiedeń Wien Vienna Austria Österreich Wiener Linien", "budapest-bus-map": "Budapeszt Budapest Węgry Hungary Magyarország BKK", "paris-bus-map": "Paryż Paris Francja France IDFM RATP", "london-bus-map": "Londyn London United Kingdom Anglia England TfL Underground", "copenhagen-bus-map": "Kopenhaga København Copenhagen Dania Denmark", "bucharest-bus-map": "Bukareszt București Bucharest Ilfov Rumunia Romania STB", "cluj-bus-map": "Kluż Cluj-Napoca Kolozsvár Rumunia Romania", "timisoara-bus-map": "Timișoara Temeszwar Temesvár Rumunia Romania", "oradea-bus-map": "Oradea Nagyvárad Rumunia Romania", "brasov-bus-map": "Braszów Brașov Rumunia Romania", "iasi-bus-map": "Jassy Iași Rumunia Romania", "constanta-bus-map": "Konstanca Constanța Rumunia Romania", "belgrade-bus-map": "Belgrad Beograd Belgrade Serbia Srbija Београд", "sofia-bus-map": "Sofia София Bułgaria Bulgaria", "istanbul-bus-map": "Stambuł İstanbul Istanbul Turcja Turkey Türkiye İETT", "athens-bus-map": "Ateny Athens Αθήνα Athina Grecja Greece OASA", "thessaloniki-bus-map": "Saloniki Thessaloniki Θεσσαλονίκη Grecja Greece", "naples-bus-map": "Neapol Napoli Naples Włochy Italy Italia ANM", "cairo-bus-map": "Kair Cairo القاهرة Egipt Egypt", "addis-bus-map": "Addis Abeba Ababa Etiopia Ethiopia Anbessa", "mexico-city-bus-map": "Meksyk Mexico City CDMX Ciudad de México Metrobús", "sao-paulo-bus-map": "São Paulo Brazylia Brazil SPTrans", "rio-bus-map": "Rio de Janeiro Brazylia Brazil BRT", "ba-bus-map": "Buenos Aires Argentyna Argentina colectivo subte", "berlin-bus-map": "Berlin Brandenburgia Brandenburg Poczdam Potsdam Niemcy Germany Deutschland BVG VBB S-Bahn U-Bahn", "randstad-bus-map": "Randstad Amsterdam Haarlem Lejda Leiden Haga Den Haag The Hague Rotterdam Holandia Netherlands Nederland Holland GVB HTM RET", "stockholm-bus-map": "Sztokholm Stockholm Szwecja Sweden Sverige SL tunnelbana pendeltåg Roslagsbanan", "goteborg-bus-map": "Göteborg Goteborg Gothenburg Gotembork Szwecja Sweden Sverige Västtrafik spårvagn", "olsztyn-bus-map": "Olsztyn Warmia Mazury Warmińsko-Mazurskie Polska Poland ZDZiT tramwaj", "aarhus-bus-map": "Aarhus Århus Dania Denmark Danmark Midttrafik Letbane Jutland Jylland", "rome-bus-map": "Rzym Roma Rome Włochy Italy Italia Atac metropolitana Lazio", "kyiv-bus-map": "Kijów Kyiv Київ Kiev Ukraina Ukraine Україна тролейбус трамвай", "lviv-bus-map": "Lwów Lviv Львів Lemberg Ukraina Ukraine Україна Львівелектротранс", "novi-sad-bus-map": "Nowy Sad Novi Sad Нови Сад Wojwodina Vojvodina Serbia Srbija JGSP", "nis-bus-map": "Nisz Niš Ниш Serbia Srbija JGSP Niš-Ekspres", "tirana-bus-map": "Tirana Tiranë Albania Shqipëri Shqipëria", "plovdiv-bus-map": "Płowdiw Plovdiv Пловдив Bułgaria Bulgaria", "varna-bus-map": "Warna Varna Варна Bułgaria Bulgaria тролейбус trolejbus"};
   const norm = (s) => (s || '').toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '').replace(/ł/g, 'l').replace(/ø/g, 'o').replace(/đ/g, 'd').replace(/ß/g, 'ss').replace(/æ/g, 'ae').replace(/ı/g, 'i');
   const cards = [...document.querySelectorAll('.card')];
   for (const c of cards) {
