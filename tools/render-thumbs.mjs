@@ -62,6 +62,8 @@ const CITIES = [
   { repo: 'varna-bus-map', slug: 'varna' },
   { repo: 'burgas-bus-map', slug: 'burgas' },
   { repo: 'ruse-bus-map', slug: 'ruse' },
+  { repo: 'volos-bus-map', slug: 'volos' },
+  { repo: 'larisa-bus-map', slug: 'larisa' },
   { repo: 'aarhus-bus-map', slug: 'aarhus' },
   { repo: 'rome-bus-map', slug: 'rome' },
   { repo: 'tirana-bus-map', slug: 'tirana' },
