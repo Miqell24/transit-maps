@@ -11,10 +11,14 @@ const HUB = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 // keeps working wherever a project happens to sit.
 const DESK = path.resolve(HUB, '..');
 const ROOTS = [DESK, path.join(DESK, 'folder bez nazwy')];
-const findRepo = (repo) => {
+// A project not yet published (no docs/) is rendered from its local build,
+// data/out/streets.geojson — the way a city is added before its first publish.
+const findStreets = (repo) => {
   for (const r of ROOTS) {
-    const p = path.join(r, repo);
-    if (fs.existsSync(path.join(p, 'docs', 'data', 'streets.geojson'))) return p;
+    for (const sub of [['docs', 'data'], ['data', 'out']]) {
+      const f = path.join(r, repo, ...sub, 'streets.geojson');
+      if (fs.existsSync(f)) return f;
+    }
   }
   throw new Error(`cannot find ${repo} under: ${ROOTS.join(' | ')}`);
 };
@@ -72,14 +76,18 @@ const CITIES = [
   { repo: 'novi-sad-bus-map', slug: 'novi-sad' },
   { repo: 'kyiv-bus-map', slug: 'kyiv' },
   { repo: 'lviv-bus-map', slug: 'lviv' },
+  { repo: 'melbourne-bus-map', slug: 'melbourne' },
 ];
+// optional: slugs on the command line render only those cities
+const ONLY = new Set(process.argv.slice(2));
 
 const W = 700; // viewBox width; height follows the network's aspect ratio
 const TOL = 0.8; // px decimation tolerance
 const BUS = '#0059a9';
 
 for (const { repo, slug } of CITIES) {
-  const file = path.join(findRepo(repo), 'docs', 'data', 'streets.geojson');
+  if (ONLY.size && !ONLY.has(slug)) continue;
+  const file = findStreets(repo);
   const geo = JSON.parse(fs.readFileSync(file));
   let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
   const segs = [];
