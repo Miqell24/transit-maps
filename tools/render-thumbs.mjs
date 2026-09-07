@@ -79,6 +79,9 @@ const CITIES = [
   { repo: 'melbourne-bus-map', slug: 'melbourne' },
   { repo: 'toronto-bus-map', slug: 'toronto' },
   { repo: 'nyc-bus-map', slug: 'nyc' },
+  { repo: 'praha-bus-map', slug: 'praha' },
+  { repo: 'zurich-bus-map', slug: 'zurich' },
+  { repo: 'nairobi-bus-map', slug: 'nairobi' },
 ];
 // optional: slugs on the command line render only those cities
 const ONLY = new Set(process.argv.slice(2));
