@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BUSMAN 4o 2026 — Public Transport Network Maps</title>
-<meta name="description" content="Interactive, poster-grade public transport maps of fifty-seven cities, built from official GTFS feeds and OpenStreetMap street geometry.">
+<meta name="description" content="Interactive, poster-grade public transport maps of sixty-one cities, built from official GTFS feeds and OpenStreetMap street geometry.">
 <style>
 :root {
   --kmk: #0059a9;
@@ -98,6 +98,10 @@ header p.sub {
 .chip .sw.skm { background: linear-gradient(90deg, #E84A4B 0 25%, #2E8EC8 25% 50%, #FFAC01 50% 75%, #2F7B20 75%); }
 /* SKA — Koleje Małopolskie's three commuter-rail lines, in their own colours */
 .chip .sw.ska { background: linear-gradient(90deg, #60B6F0 0 33%, #D4328A 33% 66%, #F2C43B 66% 100%); }
+/* Barcelona: the metro in TMB's and FGC's own colours, the trains in one purple */
+.chip .sw.metro-bcn { background: linear-gradient(90deg, #CE1126 0 20%, #93248F 20% 40%, #00A94F 40% 60%, #F7A30E 60% 80%, #005A97 80% 100%); }
+.chip .sw.rail-bcn { background: #a518a3; }
+.chip .sw.funi { background: #004C38; }
 /* Koleje Śląskie: the operator's liveries where the feed ships them, the
    family's rail purple where it does not */
 .chip .sw.ks { background: linear-gradient(90deg, #FF0000 0 20%, #FF7800 20% 40%, #009600 40% 60%, #0096FF 60% 80%, #a518a3 80% 100%); }
@@ -286,6 +290,46 @@ footer a:hover { text-decoration: underline; }
       <div class="chips">
         <span class="chip"><span class="sw"></span>124 bus</span>
         <span class="chip"><span class="sw tram"></span>23 tram</span>
+      </div>
+      <span class="open">Open the map →</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/wroclaw-bus-map/">
+    <div class="thumb"><img src="thumbs/wroclaw.svg" alt="Wrocław network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Wrocław</h2>
+      <div class="op">MPK Wrocław &middot; DLA Wrocław &middot; PT KŁOSOK &middot; NOWAK TRANSPORT</div>
+      <div class="stats">138 lines &middot; 2,401 stops &middot; 4,397 km &mdash; the city and its agglomeration in one bundle: trams 0&ndash;24, the city buses, the express A/D/K/N, the night 2xx and the zone lines 903&ndash;967 the county carriers run</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>112 bus</span>
+        <span class="chip"><span class="sw tram"></span>26 tram</span>
+      </div>
+      <span class="open">Open the map →</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/chrzanow-bus-map/">
+    <div class="thumb"><img src="thumbs/chrzanow.svg" alt="Chrzanów region network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Chrzanów Region</h2>
+      <div class="op">ZKKM Chrzanów</div>
+      <div class="stats">26 lines &middot; 471 stops &middot; 1,408 km &mdash; the commune union across Chrzanów, Trzebinia, Libiąż, Alwernia and Babice; a feed with no shapes, so every corridor is reconstructed from the stop sequence</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>26 bus</span>
+      </div>
+      <span class="open">Open the map →</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://miqell24.github.io/olkusz-bus-map/">
+    <div class="thumb"><img src="thumbs/olkusz.svg" alt="Olkusz region network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Olkusz Region</h2>
+      <div class="op">ZKGKM Olkusz</div>
+      <div class="stats">28 lines &middot; 567 stops &middot; 1,903 km &mdash; the commune union across Olkusz, Bukowno, Bolesław, Klucze and Sławków: the 4xx numbers and the lettered lines</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>28 bus</span>
       </div>
       <span class="open">Open the map →</span>
     </div>
@@ -745,6 +789,23 @@ footer a:hover { text-decoration: underline; }
     </div>
   </a>
 
+  <a class="card" href="https://miqell24.github.io/barcelona-bus-map/">
+    <div class="thumb"><img src="thumbs/barcelona.svg" alt="Barcelona network miniature" loading="lazy"></div>
+    <div class="body">
+      <h2>Barcelona</h2>
+      <div class="op">TMB &middot; TRAM &middot; FGC &middot; Rodalies &middot; the AMB carriers</div>
+      <div class="stats">STATS</div>
+      <div class="chips">
+        <span class="chip"><span class="sw"></span>BUS bus</span>
+        <span class="chip"><span class="sw tram"></span>5 tram</span>
+        <span class="chip"><span class="sw metro-bcn"></span>14 metro</span>
+        <span class="chip"><span class="sw funi"></span>2 funicular</span>
+        <span class="chip"><span class="sw rail-bcn"></span>RAIL rail</span>
+      </div>
+      <span class="open">Open the map →</span>
+    </div>
+  </a>
+
   <a class="card" href="https://miqell24.github.io/randstad-bus-map/">
     <div class="thumb"><img src="thumbs/randstad.svg" alt="Randstad &mdash; Amsterdam &middot; Den Haag &middot; Rotterdam network miniature" loading="lazy"></div>
     <div class="body">
@@ -1024,7 +1085,7 @@ footer a:hover { text-decoration: underline; }
 (() => {
   // Search: filters the cards by city, operator, local name or Polish exonym,
   // diacritic-insensitive. Enter opens the first match, "/" focuses the box.
-  const ALT = {"krakow-bus-map": "Kraków Cracow Polska Poland Małopolska KMK MPK SKA Koleje Małopolskie kolej Wieliczka Oświęcim Tarnów Sędziszów Zakopane Nowy Sącz Jasło Gorlice Dunajec Hubal Luxtorpeda", "krakow-mld-bus-map": "Kraków MLD Małopolska Wieliczka Koleje Małopolskie SKA kolej Polska Poland Tarnów Nowy Sącz Podhale Oświęcim Zakopane Jasło Gorlice Dunajec Hubal Luxtorpeda Plavec", "poznan-bus-map": "Poznań Polska Poland ZTM", "gzm-bus-map": "Katowice GZM Śląsk Silesia Metropolia Tychy Gliwice Zabrze Sosnowiec Bytom Polska Poland Koleje Śląskie kolej pociąg Częstochowa Bielsko-Biała Racibórz Zwardoń Wisła Zakopane", "rybnik-bus-map": "Rybnik Żory Jastrzębie-Zdrój Wodzisław Polska Poland", "trojmiasto-bus-map": "Trójmiasto Tricity Gdańsk Gdynia Sopot Wejherowo Rumia Polska Poland", "grodzisk-bus-map": "Grodzisk Mazowiecki WKD Milanówek Polanówek Polska Poland", "warsaw-bus-map": "Warszawa Warsaw Mazowsze ZTM WTP Metro SKM Polska Poland Pruszków Legionowo powiat legionowski Serock Nieporęt", "lodz-bus-map": "Łódź Lodz Polska Poland MPK ZDiT Pabianice MZK Zgierz MUK Ozorków Rzgów", "vienna-bus-map": "Wiedeń Wien Vienna VOR Ost-Region Dolna Austria Niederösterreich Burgenland St. Pölten Wiener Neustadt Eisenstadt Baden Krems Austria Österreich Wiener Linien Postbus ÖBB S-Bahn Badner Bahn", "budapest-bus-map": "Budapeszt Budapest Węgry Hungary Magyarország BKK Volánbusz regionális Pest megye Szentendre Gödöllő Vác Cegléd Érd", "paris-bus-map": "Paryż Paris Francja France IDFM RATP", "london-bus-map": "Londyn London United Kingdom Anglia England TfL Underground", "copenhagen-bus-map": "Kopenhaga København Copenhagen Dania Denmark", "bucharest-bus-map": "Bukareszt București Bucharest Ilfov Rumunia Romania STB", "cluj-bus-map": "Kluż Cluj-Napoca Kolozsvár Rumunia Romania", "timisoara-bus-map": "Timișoara Temeszwar Temesvár Rumunia Romania", "oradea-bus-map": "Oradea Nagyvárad Rumunia Romania", "brasov-bus-map": "Braszów Brașov Rumunia Romania", "iasi-bus-map": "Jassy Iași Rumunia Romania", "constanta-bus-map": "Konstanca Constanța Rumunia Romania", "belgrade-bus-map": "Belgrad Beograd Belgrade Serbia Srbija Београд", "sofia-bus-map": "Sofia София Bułgaria Bulgaria", "istanbul-bus-map": "Stambuł İstanbul Istanbul Turcja Turkey Türkiye İETT", "athens-bus-map": "Ateny Athens Αθήνα Athina Grecja Greece OASA", "thessaloniki-bus-map": "Saloniki Thessaloniki Θεσσαλονίκη Grecja Greece", "naples-bus-map": "Neapol Napoli Naples Włochy Italy Italia ANM", "cairo-bus-map": "Kair Cairo القاهرة Egipt Egypt", "addis-bus-map": "Addis Abeba Ababa Etiopia Ethiopia Anbessa", "mexico-city-bus-map": "Meksyk Mexico City CDMX Ciudad de México Metrobús", "sao-paulo-bus-map": "São Paulo Brazylia Brazil SPTrans", "rio-bus-map": "Rio de Janeiro Brazylia Brazil BRT", "ba-bus-map": "Buenos Aires Argentyna Argentina colectivo subte", "berlin-bus-map": "Berlin Brandenburgia Brandenburg Poczdam Potsdam Cottbus Chociebuż Frankfurt nad Odrą Oder Brandenburg an der Havel Prignitz Uckermark Łużyce Lausitz Niemcy Germany Deutschland BVG VBB S-Bahn U-Bahn RB RE ODEG DB Regio", "randstad-bus-map": "Randstad Amsterdam Haarlem Lejda Leiden Haga Den Haag The Hague Rotterdam Holandia Netherlands Nederland Holland GVB HTM RET", "stockholm-bus-map": "Sztokholm Stockholm Szwecja Sweden Sverige SL tunnelbana pendeltåg Roslagsbanan", "goteborg-bus-map": "Göteborg Goteborg Gothenburg Gotembork Szwecja Sweden Sverige Västtrafik spårvagn", "olsztyn-bus-map": "Olsztyn Warmia Mazury Warmińsko-Mazurskie Polska Poland ZDZiT tramwaj", "aarhus-bus-map": "Aarhus Århus Dania Denmark Danmark Midttrafik Letbane Jutland Jylland", "rome-bus-map": "Rzym Roma Rome Włochy Italy Italia Atac metropolitana Lazio", "kyiv-bus-map": "Kijów Kyiv Київ Kiev Ukraina Ukraine Україна тролейбус трамвай", "lviv-bus-map": "Lwów Lviv Львів Lemberg Ukraina Ukraine Україна Львівелектротранс", "novi-sad-bus-map": "Nowy Sad Novi Sad Нови Сад Wojwodina Vojvodina Serbia Srbija JGSP", "nis-bus-map": "Nisz Niš Ниш Serbia Srbija JGSP Niš-Ekspres", "tirana-bus-map": "Tirana Tiranë Albania Shqipëri Shqipëria", "plovdiv-bus-map": "Płowdiw Plovdiv Пловдив Bułgaria Bulgaria", "varna-bus-map": "Warna Varna Варна Bułgaria Bulgaria тролейбус trolejbus", "burgas-bus-map": "Burgas Бургас Bułgaria Bulgaria тролейбус trolejbus Меден рудник Славейков", "ruse-bus-map": "Ruse Russe Русе Rusczuk Ruszczuk Giurgiu Giurgevo Гюргево Bułgaria Bulgaria Rumunia Romania România тролейбус trolejbus Дунав Dunăre Danube", "volos-bus-map": "Volos Wolos Βόλος Greece Grecja Ελλάδα Thessaly Θεσσαλία Pelion Πήλιο Nea Ionia Νέα Ιωνία", "larisa-bus-map": "Larisa Larissa Λάρισα Greece Grecja Ελλάδα Thessaly Θεσσαλία Giannouli Γιάννουλη Nikaia Νίκαια", "melbourne-bus-map": "Melbourne Australia Australia Victoria Wiktoria PTV Yarra Trams Metro Trains SkyBus myki", "toronto-bus-map": "Toronto Kanada Canada Ontario TTC streetcar subway Blue Night", "nyc-bus-map": "New York Nowy Jork NYC Manhattan Brooklyn Queens Bronx Staten Island Nassau Long Island Jersey City Newark Hoboken MTA LIRR Metro-North PATH NICE NJ Transit USA United States", "nairobi-bus-map": "Nairobi Kenia Kenya matatu Digital Matatus", "praha-bus-map": "Praha Praga Prague Czechy Czechia Česko PID DPP ROPID metro tramvaj Esko", "zurich-bus-map": "Zürich Zurych Zurich Szwajcaria Switzerland Schweiz ZVV VBZ S-Bahn Tram Trolleybus"};
+  const ALT = {"wroclaw-bus-map": "Wrocław Wroclaw Breslau Polska Poland Dolny Śląsk MPK aglomeracja Trzebnica Oleśnica Oława Sobótka Kąty Wrocławskie Siechnice", "chrzanow-bus-map": "Chrzanów Chrzanow Trzebinia Libiąż Alwernia Babice Bolęcin Płaza Małopolska Polska Poland ZKKM", "olkusz-bus-map": "Olkusz Bukowno Bolesław Klucze Wolbrom Sławków Małopolska Polska Poland ZKGKM", "barcelona-bus-map": "Barcelona Barcelone Katalonia Catalunya Cataluña Hiszpania Spain España TMB TRAM FGC Rodalies metro tramvia Hospitalet Badalona Sabadell Terrassa Mataró Montjuïc Vallvidrera", "krakow-bus-map": "Kraków Cracow Polska Poland Małopolska KMK MPK SKA Koleje Małopolskie kolej Wieliczka Oświęcim Tarnów Sędziszów Zakopane Nowy Sącz Jasło Gorlice Dunajec Hubal Luxtorpeda", "krakow-mld-bus-map": "Kraków MLD Małopolska Wieliczka Koleje Małopolskie SKA kolej Polska Poland Tarnów Nowy Sącz Podhale Oświęcim Zakopane Jasło Gorlice Dunajec Hubal Luxtorpeda Plavec", "poznan-bus-map": "Poznań Polska Poland ZTM", "gzm-bus-map": "Katowice GZM Śląsk Silesia Metropolia Tychy Gliwice Zabrze Sosnowiec Bytom Polska Poland Koleje Śląskie kolej pociąg Częstochowa Bielsko-Biała Racibórz Zwardoń Wisła Zakopane", "rybnik-bus-map": "Rybnik Żory Jastrzębie-Zdrój Wodzisław Polska Poland", "trojmiasto-bus-map": "Trójmiasto Tricity Gdańsk Gdynia Sopot Wejherowo Rumia Polska Poland", "grodzisk-bus-map": "Grodzisk Mazowiecki WKD Milanówek Polanówek Polska Poland", "warsaw-bus-map": "Warszawa Warsaw Mazowsze ZTM WTP Metro SKM Polska Poland Pruszków Legionowo powiat legionowski Serock Nieporęt", "lodz-bus-map": "Łódź Lodz Polska Poland MPK ZDiT Pabianice MZK Zgierz MUK Ozorków Rzgów", "vienna-bus-map": "Wiedeń Wien Vienna VOR Ost-Region Dolna Austria Niederösterreich Burgenland St. Pölten Wiener Neustadt Eisenstadt Baden Krems Austria Österreich Wiener Linien Postbus ÖBB S-Bahn Badner Bahn", "budapest-bus-map": "Budapeszt Budapest Węgry Hungary Magyarország BKK Volánbusz regionális Pest megye Szentendre Gödöllő Vác Cegléd Érd", "paris-bus-map": "Paryż Paris Francja France IDFM RATP", "london-bus-map": "Londyn London United Kingdom Anglia England TfL Underground", "copenhagen-bus-map": "Kopenhaga København Copenhagen Dania Denmark", "bucharest-bus-map": "Bukareszt București Bucharest Ilfov Rumunia Romania STB", "cluj-bus-map": "Kluż Cluj-Napoca Kolozsvár Rumunia Romania", "timisoara-bus-map": "Timișoara Temeszwar Temesvár Rumunia Romania", "oradea-bus-map": "Oradea Nagyvárad Rumunia Romania", "brasov-bus-map": "Braszów Brașov Rumunia Romania", "iasi-bus-map": "Jassy Iași Rumunia Romania", "constanta-bus-map": "Konstanca Constanța Rumunia Romania", "belgrade-bus-map": "Belgrad Beograd Belgrade Serbia Srbija Београд", "sofia-bus-map": "Sofia София Bułgaria Bulgaria", "istanbul-bus-map": "Stambuł İstanbul Istanbul Turcja Turkey Türkiye İETT", "athens-bus-map": "Ateny Athens Αθήνα Athina Grecja Greece OASA", "thessaloniki-bus-map": "Saloniki Thessaloniki Θεσσαλονίκη Grecja Greece", "naples-bus-map": "Neapol Napoli Naples Włochy Italy Italia ANM", "cairo-bus-map": "Kair Cairo القاهرة Egipt Egypt", "addis-bus-map": "Addis Abeba Ababa Etiopia Ethiopia Anbessa", "mexico-city-bus-map": "Meksyk Mexico City CDMX Ciudad de México Metrobús", "sao-paulo-bus-map": "São Paulo Brazylia Brazil SPTrans", "rio-bus-map": "Rio de Janeiro Brazylia Brazil BRT", "ba-bus-map": "Buenos Aires Argentyna Argentina colectivo subte", "berlin-bus-map": "Berlin Brandenburgia Brandenburg Poczdam Potsdam Cottbus Chociebuż Frankfurt nad Odrą Oder Brandenburg an der Havel Prignitz Uckermark Łużyce Lausitz Niemcy Germany Deutschland BVG VBB S-Bahn U-Bahn RB RE ODEG DB Regio", "randstad-bus-map": "Randstad Amsterdam Haarlem Lejda Leiden Haga Den Haag The Hague Rotterdam Holandia Netherlands Nederland Holland GVB HTM RET", "stockholm-bus-map": "Sztokholm Stockholm Szwecja Sweden Sverige SL tunnelbana pendeltåg Roslagsbanan", "goteborg-bus-map": "Göteborg Goteborg Gothenburg Gotembork Szwecja Sweden Sverige Västtrafik spårvagn", "olsztyn-bus-map": "Olsztyn Warmia Mazury Warmińsko-Mazurskie Polska Poland ZDZiT tramwaj", "aarhus-bus-map": "Aarhus Århus Dania Denmark Danmark Midttrafik Letbane Jutland Jylland", "rome-bus-map": "Rzym Roma Rome Włochy Italy Italia Atac metropolitana Lazio", "kyiv-bus-map": "Kijów Kyiv Київ Kiev Ukraina Ukraine Україна тролейбус трамвай", "lviv-bus-map": "Lwów Lviv Львів Lemberg Ukraina Ukraine Україна Львівелектротранс", "novi-sad-bus-map": "Nowy Sad Novi Sad Нови Сад Wojwodina Vojvodina Serbia Srbija JGSP", "nis-bus-map": "Nisz Niš Ниш Serbia Srbija JGSP Niš-Ekspres", "tirana-bus-map": "Tirana Tiranë Albania Shqipëri Shqipëria", "plovdiv-bus-map": "Płowdiw Plovdiv Пловдив Bułgaria Bulgaria", "varna-bus-map": "Warna Varna Варна Bułgaria Bulgaria тролейбус trolejbus", "burgas-bus-map": "Burgas Бургас Bułgaria Bulgaria тролейбус trolejbus Меден рудник Славейков", "ruse-bus-map": "Ruse Russe Русе Rusczuk Ruszczuk Giurgiu Giurgevo Гюргево Bułgaria Bulgaria Rumunia Romania România тролейбус trolejbus Дунав Dunăre Danube", "volos-bus-map": "Volos Wolos Βόλος Greece Grecja Ελλάδα Thessaly Θεσσαλία Pelion Πήλιο Nea Ionia Νέα Ιωνία", "larisa-bus-map": "Larisa Larissa Λάρισα Greece Grecja Ελλάδα Thessaly Θεσσαλία Giannouli Γιάννουλη Nikaia Νίκαια", "melbourne-bus-map": "Melbourne Australia Australia Victoria Wiktoria PTV Yarra Trams Metro Trains SkyBus myki", "toronto-bus-map": "Toronto Kanada Canada Ontario TTC streetcar subway Blue Night", "nyc-bus-map": "New York Nowy Jork NYC Manhattan Brooklyn Queens Bronx Staten Island Nassau Long Island Jersey City Newark Hoboken MTA LIRR Metro-North PATH NICE NJ Transit USA United States", "nairobi-bus-map": "Nairobi Kenia Kenya matatu Digital Matatus", "praha-bus-map": "Praha Praga Prague Czechy Czechia Česko PID DPP ROPID metro tramvaj Esko", "zurich-bus-map": "Zürich Zurych Zurich Szwajcaria Switzerland Schweiz ZVV VBZ S-Bahn Tram Trolleybus"};
   const norm = (s) => (s || '').toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '').replace(/ł/g, 'l').replace(/ø/g, 'o').replace(/đ/g, 'd').replace(/ß/g, 'ss').replace(/æ/g, 'ae').replace(/ı/g, 'i');
   const cards = [...document.querySelectorAll('.card')];
   for (const c of cards) {

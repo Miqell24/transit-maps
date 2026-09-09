@@ -25,6 +25,10 @@ const findStreets = (repo) => {
 const OUT = path.join(HUB, 'docs', 'thumbs');
 
 const CITIES = [
+  { repo: 'wroclaw-bus-map', slug: 'wroclaw' },
+  { repo: 'chrzanow-bus-map', slug: 'chrzanow' },
+  { repo: 'olkusz-bus-map', slug: 'olkusz' },
+  { repo: 'barcelona-bus-map', slug: 'barcelona' },
   { repo: 'krakow-bus-map', slug: 'krakow' },
   { repo: 'krakow-mld-bus-map', slug: 'krakow-mld' },
   { repo: 'poznan-bus-map', slug: 'poznan' },
