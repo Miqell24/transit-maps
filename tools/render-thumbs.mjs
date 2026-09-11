@@ -47,7 +47,9 @@ const CITIES = [
   { repo: 'belgrade-bus-map', slug: 'belgrade' },
   { repo: 'sofia-bus-map', slug: 'sofia' },
   { repo: 'istanbul-bus-map', slug: 'istanbul' },
-  { repo: 'athens-bus-map', slug: 'athens' },
+  // framed on the city network: Proastiakos runs out to Kiato and Chalkida
+  // (11.09.2026) and would shrink Athens to a corner of the card
+  { repo: 'athens-bus-map', slug: 'athens', frameModes: ['bus'] },
   { repo: 'thessaloniki-bus-map', slug: 'thessaloniki' },
   { repo: 'naples-bus-map', slug: 'naples' },
   { repo: 'cairo-bus-map', slug: 'cairo' },
@@ -72,6 +74,7 @@ const CITIES = [
   { repo: 'ruse-bus-map', slug: 'ruse' },
   { repo: 'volos-bus-map', slug: 'volos' },
   { repo: 'larisa-bus-map', slug: 'larisa' },
+  { repo: 'patra-bus-map', slug: 'patra' },
   { repo: 'aarhus-bus-map', slug: 'aarhus' },
   { repo: 'rome-bus-map', slug: 'rome' },
   { repo: 'tirana-bus-map', slug: 'tirana' },
@@ -94,7 +97,7 @@ const W = 700; // viewBox width; height follows the network's aspect ratio
 const TOL = 0.8; // px decimation tolerance
 const BUS = '#0059a9';
 
-for (const { repo, slug } of CITIES) {
+for (const { repo, slug, frameModes } of CITIES) {
   if (ONLY.size && !ONLY.has(slug)) continue;
   const file = findStreets(repo);
   const geo = JSON.parse(fs.readFileSync(file));
@@ -103,7 +106,8 @@ for (const { repo, slug } of CITIES) {
   for (const f of geo.features) {
     if (f.geometry.type !== 'LineString') continue;
     const color = f.properties.color || BUS;
-    for (const [lon, lat] of f.geometry.coordinates) {
+    // frameModes: only these modes set the frame; the rest may run off the card
+    if (!frameModes || frameModes.includes(f.properties.mode)) for (const [lon, lat] of f.geometry.coordinates) {
       if (lon < minX) minX = lon;
       if (lon > maxX) maxX = lon;
       if (lat < minY) minY = lat;
