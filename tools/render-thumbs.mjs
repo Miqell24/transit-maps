@@ -40,6 +40,7 @@ const CITIES = [
   { repo: 'bucharest-bus-map', slug: 'bucharest' },
   { repo: 'cluj-bus-map', slug: 'cluj' },
   { repo: 'timisoara-bus-map', slug: 'timisoara' },
+  { repo: 'arad-bus-map', slug: 'arad' },
   { repo: 'oradea-bus-map', slug: 'oradea' },
   { repo: 'brasov-bus-map', slug: 'brasov' },
   { repo: 'iasi-bus-map', slug: 'iasi' },

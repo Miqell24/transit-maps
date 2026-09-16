@@ -20,6 +20,7 @@ Each card shows a miniature of the city's real route network (rendered from that
 | Bucharest & Ilfov | `bucharest-bus-map` | https://miqell24.github.io/bucharest-bus-map/ |
 | Cluj-Napoca | `cluj-bus-map` | https://miqell24.github.io/cluj-bus-map/ |
 | Timișoara | `timisoara-bus-map` | https://miqell24.github.io/timisoara-bus-map/ |
+| Arad | `arad-bus-map` | https://miqell24.github.io/arad-bus-map/ |
 | Oradea | `oradea-bus-map` | https://miqell24.github.io/oradea-bus-map/ |
 | Brașov | `brasov-bus-map` | https://miqell24.github.io/brasov-bus-map/ |
 | Iași | `iasi-bus-map` | https://miqell24.github.io/iasi-bus-map/ |
