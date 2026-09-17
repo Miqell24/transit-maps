@@ -38,10 +38,10 @@ const RULES = {
   'krakow-mld-bus-map': (l, m) => (m === 'tram' ? /^6\d$/.test(l) : /^[69]\d\d$/.test(l)),
   'budapest-bus-map': N(/^9\d\d$/),
   'toronto-bus-map': N(/^3\d\d$/, ['bus', 'tram']),
-  'athens-bus-map': N(/^(400|500|790)$/),
+  'athens-bus-map': N(/^(400|500|790|Χ14)$/),
   'gzm-bus-map': N(/\dN$/),
   'thessaloniki-bus-map': N(/\dN$/),
-  'stockholm-bus-map': N(/^9\d$/),
+  'stockholm-bus-map': N(/^\d*9\d$/),
 };
 const TROLLEY = '#149a3f';
 
