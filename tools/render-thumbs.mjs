@@ -85,7 +85,8 @@ const CITIES = [
   { repo: 'kyiv-bus-map', slug: 'kyiv' },
   { repo: 'lviv-bus-map', slug: 'lviv' },
   { repo: 'melbourne-bus-map', slug: 'melbourne' },
-  { repo: 'toronto-bus-map', slug: 'toronto' },
+  // the GO trains reach Kitchener and Niagara Falls — the buses set the frame
+  { repo: 'toronto-bus-map', slug: 'toronto', frameModes: ['bus'] },
   { repo: 'nyc-bus-map', slug: 'nyc' },
   { repo: 'praha-bus-map', slug: 'praha' },
   { repo: 'zurich-bus-map', slug: 'zurich' },
